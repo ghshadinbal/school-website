@@ -1,0 +1,613 @@
+<!doctype html>
+
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SSLC | ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</title>
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+/* SSLC Batch Buttons */
+.batch-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  justify-content:center;
+  margin:35px 0 30px;
+}
+
+.batch-btn{
+  border:none;
+  background:#fff;
+  padding:20px 28px;
+  border-radius:16px;
+  cursor:pointer;
+  box-shadow:0 6px 20px rgba(0,0,0,.09);
+  transition:.3s;
+  min-width:190px;
+  font-family:inherit;
+}
+
+.batch-btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 28px rgba(0,0,0,.14);
+}
+
+.batch-btn span{
+  display:block;
+  font-size:21px;
+  font-weight:700;
+  color:#12355b;
+}
+
+.batch-btn small{
+  display:block;
+  margin-top:6px;
+  color:#777;
+}
+
+.batch-btn.active{
+  background:#12355b;
+}
+
+.batch-btn.active span,
+.batch-btn.active small{
+  color:#fff;
+}
+
+/* Hide/show batch content */
+.batch-content{
+  display:none;
+  animation:fadeIn .4s ease;
+}
+
+.batch-content.active{
+  display:block;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.batch-title{
+  text-align:center;
+  margin:30px 0;
+}
+
+.batch-title h2{
+  color:#12355b;
+  margin-bottom:8px;
+}
+
+/* Top 10 Students */
+.top-students{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:22px;
+}
+
+.student-rank{
+  position:relative;
+  background:#fff;
+  text-align:center;
+  padding:30px 18px 22px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.student-rank:hover{
+  transform:translateY(-7px);
+  box-shadow:0 15px 35px rgba(0,0,0,.14);
+}
+
+.rank{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:#12355b;
+  color:#fff;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.student-photo{
+  width:88px;
+  height:88px;
+  margin:5px auto 15px;
+  border-radius:50%;
+  background:#eef3f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+}
+
+.student-rank h3{
+  color:#12355b;
+  margin:8px 0;
+}
+
+.student-rank p{
+  color:#777;
+  margin:6px 0 12px;
+}
+
+.student-rank strong{
+  display:inline-block;
+  background:#f4a622;
+  color:#fff;
+  padding:7px 14px;
+  border-radius:20px;
+}
+
+.student-rank.first{
+  border:2px solid #d4af37;
+}
+
+.student-rank.second{
+  border:2px solid #b8b8b8;
+}
+
+.student-rank.third{
+  border:2px solid #cd7f32;
+}
+
+.batch-result{
+  max-width:700px;
+  margin:0 auto 30px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.result-box{
+  background:#fff;
+  text-align:center;
+  padding:18px 10px;
+  border-radius:14px;
+  box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.result-box strong{
+  display:block;
+  color:#12355b;
+  font-size:24px;
+  margin-top:6px;
+}
+
+@media(max-width:600px){
+  .batch-buttons{
+    gap:10px;
+  }
+
+  .batch-btn{
+    min-width:140px;
+    padding:16px 12px;
+  }
+
+  .top-students{
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+
+  .student-rank{
+    padding:25px 8px 18px;
+  }
+
+  .student-rank h3{
+    font-size:15px;
+  }
+
+  .batch-result{
+    gap:8px;
+  }
+
+  .result-box{
+    padding:12px 5px;
+    font-size:13px;
+  }
+
+  .result-box strong{
+    font-size:18px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>🇮🇳 ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</span>
+    <span>ಜ್ಞಾನ • ಶಿಸ್ತು • ಸಾಧನೆ</span>
+  </div>
+</div>
+
+<header>
+<div class="wrap head">
+
+<a class="brand" href="index.html">
+  <img class="logo" src="assets/images/emblem.svg" alt="ಶಾಲೆಯ ಲಾಂಛನ">
+  <div>
+    <div class="school-kn">ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</div>
+    <div class="school-en">Government High School Hadinabal</div>
+    <div class="motto">ವಿದ್ಯಾರ್ಥಿಗಳ ಭವಿಷ್ಯ — ನಮ್ಮ ಹೊಣೆಗಾರಿಕೆ</div>
+  </div>
+</a>
+
+<button class="menu" aria-label="ಮೆನು">☰</button>
+
+<nav class="nav">
+  <a href="index.html">ಮುಖಪುಟ</a>
+  <a href="about.html">ನಮ್ಮ ಶಾಲೆ</a>
+  <a href="sdmc.html">SDMC</a>
+  <a href="staff.html">ಶಿಕ್ಷಕ ವೃಂದ</a>
+  <a class="active" href="sslc.html">SSLC</a>
+  <a href="achievements.html">ಸಾಧನೆಗಳು</a>
+  <a href="gallery.html">ಗ್ಯಾಲರಿ</a>
+  <a href="notices.html">ಪ್ರಕಟಣೆಗಳು</a>
+  <a href="contact.html">ಸಂಪರ್ಕ</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="pagehero">
+<div class="wrap">
+  <span class="kicker" style="color:#ffd68a">10ನೇ ತರಗತಿ</span>
+  <h1>SSLC</h1>
+  <p>ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ಪೋಷಕರಿಗೆ SSLC ಪರೀಕ್ಷೆ, ಫಲಿತಾಂಶ ಮತ್ತು ಸಾಧನೆಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಮುಖ ಮಾಹಿತಿ.</p>
+</div>
+</section>
+
+<!-- SSLC INFORMATION -->
+
+<section class="section">
+<div class="wrap">
+
+<div class="section-head">
+  <span class="kicker">SSLC ಮಾಹಿತಿ</span>
+  <h2>ನಮ್ಮ SSLC ವಿಭಾಗ</h2>
+  <p>ಈ ಪುಟದಲ್ಲಿ ಶಾಲೆಯ SSLC ಸಂಬಂಧಿತ ಮಾಹಿತಿಯನ್ನು ವರ್ಷದಿಂದ ವರ್ಷಕ್ಕೆ ನವೀಕರಿಸಬಹುದು.</p>
+</div>
+
+<div class="cards">
+
+<article class="card">
+<div class="icon">📊</div>
+<h3>SSLC ಫಲಿತಾಂಶ</h3>
+<p>ವರ್ಷವಾರು ಫಲಿತಾಂಶ, ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ ಮತ್ತು ಇತರ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ನೋಡಿ.</p>
+</article>
+
+<article class="card">
+<div class="icon">🏆</div>
+<h3>ಅತ್ಯುತ್ತಮ ಸಾಧನೆ</h3>
+<p>ಪ್ರತಿ ವರ್ಷದ ಅತ್ಯುತ್ತಮ 10 ವಿದ್ಯಾರ್ಥಿಗಳ ಸಾಧನೆಯನ್ನು ನೋಡಿ.</p>
+</article>
+
+<article class="card">
+<div class="icon">📚</div>
+<h3>ಅಧ್ಯಯನ ಮಾಹಿತಿ</h3>
+<p>ಅಧ್ಯಯನ ಸಾಮಗ್ರಿ, ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಉಪಯುಕ್ತ ಸಂಪನ್ಮೂಲಗಳು.</p>
+</article>
+
+<article class="card">
+<div class="icon">📢</div>
+<h3>SSLC ಪ್ರಕಟಣೆಗಳು</h3>
+<p>ಪರೀಕ್ಷಾ ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ಪ್ರಮುಖ ಪ್ರಕಟಣೆಗಳು.</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- BATCH RESULTS -->
+
+<section class="section tint">
+<div class="wrap">
+
+<div class="section-head">
+  <span class="kicker">ಫಲಿತಾಂಶ ಮತ್ತು ಸಾಧನೆ</span>
+  <h2>ವರ್ಷವಾರು SSLC ಫಲಿತಾಂಶ</h2>
+  <p>ಒಂದು ಬ್ಯಾಚ್ ಆಯ್ಕೆ ಮಾಡಿ ಆ ವರ್ಷದ ಫಲಿತಾಂಶ ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ನೋಡಿ.</p>
+</div>
+
+<!-- BATCH BUTTONS -->
+
+<div class="batch-buttons">
+
+<button class="batch-btn active" onclick="showBatch('batch2025', this)">
+  <span>2025–26</span>
+  <small>SSLC Batch</small>
+</button>
+
+<button class="batch-btn" onclick="showBatch('batch2024', this)">
+  <span>2024–25</span>
+  <small>SSLC Batch</small>
+</button>
+
+<button class="batch-btn" onclick="showBatch('batch2023', this)">
+  <span>2023–24</span>
+  <small>SSLC Batch</small>
+</button>
+
+<button class="batch-btn" onclick="showBatch('batch2022', this)">
+  <span>2022–23</span>
+  <small>SSLC Batch</small>
+</button>
+
+</div>
+
+<!-- 2025-26 -->
+
+<div id="batch2025" class="batch-content active">
+
+<div class="batch-result">
+
+<div class="result-box">
+ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
+<strong>81</strong>
+</div>
+
+<div class="result-box">
+ಉತ್ತೀರ್ಣರು
+<strong>81</strong>
+</div>
+
+<div class="result-box">
+ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+<strong>100%</strong>
+</div>
+
+</div>
+
+<div class="batch-title">
+<h2>🏆 2025–26 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು</h2>
+<p>ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು</p>
+</div>
+
+<div class="top-students">
+
+<article class="student-rank first">
+<div class="rank">🥇</div>
+<img class="student-photo" src="assets/images/students/b25/student1.png" alt="Student Name">
+<h3>ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ</h3>
+<p>1ನೇ ಸ್ಥಾನ</p>
+<strong>593</strong>
+</article>
+
+<article class="student-rank second">
+<div class="rank">🥈</div>
+<div class="student-photo">👩‍🎓</div>
+<h3>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</h3>
+<p>2ನೇ ಸ್ಥಾನ</p>
+<strong>ಅಂಕ ಇಲ್ಲಿ ಸೇರಿಸಿ</strong>
+</article>
+
+<article class="student-rank third">
+<div class="rank">🥉</div>
+<div class="student-photo">👨‍🎓</div>
+<h3>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</h3>
+<p>3ನೇ ಸ್ಥಾನ</p>
+<strong>ಅಂಕ ಇಲ್ಲಿ ಸೇರಿಸಿ</strong>
+</article>
+
+<article class="student-rank">
+<div class="rank">4</div>
+<div class="student-photo">👩‍🎓</div>
+<h3>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</h3>
+<p>4ನೇ ಸ್ಥಾನ</p>
+<strong>ಅಂಕ ಇಲ್ಲಿ ಸೇರಿಸಿ</strong>
+</article>
+
+<article class="student-rank">
+<div class="rank">5</div>
+<div class="student-photo">👨‍🎓</div>
+<h3>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</h3>
+<p>5ನೇ ಸ್ಥಾನ</p>
+<strong>ಅಂಕ ಇಲ್ಲಿ ಸೇರಿಸಿ</strong>
+</article>
+
+<article class="student-rank">
+<div class="rank">6</div>
+<div class="student-photo">👩‍🎓</div>
+<h3>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</h3>
+<p>6ನೇ ಸ್ಥಾನ</p>
+<strong>ಅಂಕ ಇಲ್ಲಿ ಸೇರಿಸಿ</strong>
+</article>
+
+<article class="student-rank">
+<div class="rank">7</div>
+<div class="student-photo">👨‍🎓</div>
+<h3>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</h3>
+<p>7ನೇ ಸ್ಥಾನ</p>
+<strong>ಅಂಕ ಇಲ್ಲಿ ಸೇರಿಸಿ</strong>
+</article>
+
+<article class="student-rank">
+<div class="rank">8</div>
+<div class="student-photo">👩‍🎓</div>
+<h3>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</h3>
+<p>8ನೇ ಸ್ಥಾನ</p>
+<strong>ಅಂಕ ಇಲ್ಲಿ ಸೇರಿಸಿ</strong>
+</article>
+
+<article class="student-rank">
+<div class="rank">9</div>
+<div class="student-photo">👨‍🎓</div>
+<h3>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</h3>
+<p>9ನೇ ಸ್ಥಾನ</p>
+<strong>ಅಂಕ ಇಲ್ಲಿ ಸೇರಿಸಿ</strong>
+</article>
+
+<article class="student-rank">
+<div class="rank">10</div>
+<div class="student-photo">👩‍🎓</div>
+<h3>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</h3>
+<p>10ನೇ ಸ್ಥಾನ</p>
+<strong>ಅಂಕ ಇಲ್ಲಿ ಸೇರಿಸಿ</strong>
+</article>
+
+</div>
+</div>
+
+<!-- 2024-25 -->
+
+<div id="batch2024" class="batch-content">
+
+<div class="batch-title">
+<h2>🏆 2024–25 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು</h2>
+<p>ಈ ವರ್ಷದ ವಿದ್ಯಾರ್ಥಿಗಳ ಮಾಹಿತಿಯನ್ನು ಸೇರಿಸಿ.</p>
+</div>
+
+<div class="note">
+<strong>📋 ಮಾಹಿತಿ:</strong> 2024–25 ಬ್ಯಾಚ್‌ನ ಫಲಿತಾಂಶ ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ಸೇರಿಸಿ.
+</div>
+
+</div>
+
+<!-- 2023-24 -->
+
+<div id="batch2023" class="batch-content">
+
+<div class="batch-title">
+<h2>🏆 2023–24 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು</h2>
+</div>
+
+<div class="note">
+<strong>📋 ಮಾಹಿತಿ:</strong> 2023–24 ಬ್ಯಾಚ್‌ನ ಫಲಿತಾಂಶ ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ಸೇರಿಸಿ.
+</div>
+
+</div>
+
+<!-- 2022-23 -->
+
+<div id="batch2022" class="batch-content">
+
+<div class="batch-title">
+<h2>🏆 2022–23 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು</h2>
+</div>
+
+<div class="note">
+<strong>📋 ಮಾಹಿತಿ:</strong> 2022–23 ಬ್ಯಾಚ್‌ನ ಫಲಿತಾಂಶ ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ಸೇರಿಸಿ.
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- WISHES -->
+
+<section class="section tint">
+<div class="wrap split">
+
+<div>
+<span class="kicker">ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ</span>
+<h2>SSLC ಪರೀಕ್ಷೆಗೆ ಶುಭಾಶಯಗಳು!</h2>
+
+<p>ನಮ್ಮ ಎಲ್ಲಾ 10ನೇ ತರಗತಿ ವಿದ್ಯಾರ್ಥಿಗಳು ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಪರೀಕ್ಷೆಯನ್ನು ಎದುರಿಸಿ ಉತ್ತಮ ಫಲಿತಾಂಶ ಪಡೆಯಲಿ.</p>
+
+<div class="checks">
+<div class="check"><b>✓</b> ನಿಯಮಿತ ಅಧ್ಯಯನ ಮತ್ತು ಪುನರವಲೋಕನ</div>
+<div class="check"><b>✓</b> ಸಮಯದ ಸರಿಯಾದ ನಿರ್ವಹಣೆ</div>
+<div class="check"><b>✓</b> ಶಿಕ್ಷಕರ ಮಾರ್ಗದರ್ಶನದ ಸದ್ಬಳಕೆ</div>
+<div class="check"><b>✓</b> ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಪರೀಕ್ಷೆ ಎದುರಿಸಿ</div>
+</div>
+</div>
+
+<div class="quote">
+<p>“ಯಶಸ್ಸು ಒಂದೇ ದಿನದಲ್ಲಿ ಸಿಗುವುದಿಲ್ಲ; ಪ್ರತಿದಿನದ ಪರಿಶ್ರಮವೇ ಅದಕ್ಕೆ ದಾರಿ.”</p>
+<strong>— SSLC ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಶುಭ ಹಾರೈಕೆಗಳು</strong>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="note">
+<strong>✏️ ಈ ಪುಟವನ್ನು ನವೀಕರಿಸಿ:</strong>
+ಪ್ರತಿ ವರ್ಷದ SSLC ಫಲಿತಾಂಶ ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳ ನಿಜವಾದ ಹೆಸರು ಹಾಗೂ ಅಂಕಗಳನ್ನು ಇಲ್ಲಿ ಸೇರಿಸಿ.
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="wrap footer-grid">
+
+<div>
+<h3>ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</h3>
+<p>Government High School Hadinabal</p>
+<p>ವಿದ್ಯಾರ್ಥಿಗಳ ಸರ್ವತೋಮುಖ ಅಭಿವೃದ್ಧಿಗೆ ಸಮರ್ಪಣೆ.</p>
+</div>
+
+<div>
+<h4>ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು</h4>
+<p><a href="about.html">ನಮ್ಮ ಶಾಲೆ</a></p>
+<p><a href="sdmc.html">SDMC</a></p>
+<p><a href="sslc.html">SSLC</a></p>
+<p><a href="achievements.html">ಸಾಧನೆಗಳು</a></p>
+</div>
+
+<div>
+<h4>ಸಂಪರ್ಕ</h4>
+<p>📍 ಹಡಿನಬಾಳ, ಹೊನ್ನಾವರ, ಉತ್ತರ ಕನ್ನಡ</p>
+<p>📞 +91 76768 10378</p>
+</div>
+
+</div>
+
+<div class="bottom">
+<div class="wrap">
+© <span id="year"></span> ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
+</div>
+</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+
+<script>
+function showBatch(batchId, button) {
+
+  // Hide all batch information
+  document.querySelectorAll('.batch-content').forEach(function(batch) {
+    batch.classList.remove('active');
+  });
+
+  // Remove active style from all buttons
+  document.querySelectorAll('.batch-btn').forEach(function(btn) {
+    btn.classList.remove('active');
+  });
+
+  // Show selected batch
+  document.getElementById(batchId).classList.add('active');
+
+  // Highlight selected button
+  button.classList.add('active');
+}
+</script>
+
+</body>
+</html>
