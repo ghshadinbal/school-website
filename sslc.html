@@ -1,14 +1,21 @@
 <!doctype html>
 
 <html lang="kn">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ - SSLC ಫಲಿತಾಂಶ ಮತ್ತು ವಿದ್ಯಾರ್ಥಿಗಳ ಸಾಧನೆ">
 <title>SSLC | ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</title>
+
 <link rel="stylesheet" href="assets/css/style.css">
 
 <style>
-/* SSLC Batch Buttons */
+
+/* ================================
+   SSLC BATCH BUTTONS
+================================ */
+
 .batch-buttons{
   display:flex;
   flex-wrap:wrap;
@@ -56,7 +63,11 @@
   color:#fff;
 }
 
-/* Hide/show batch content */
+
+/* ================================
+   BATCH CONTENT
+================================ */
+
 .batch-content{
   display:none;
   animation:fadeIn .4s ease;
@@ -71,11 +82,17 @@
     opacity:0;
     transform:translateY(15px);
   }
+
   to{
     opacity:1;
     transform:translateY(0);
   }
 }
+
+
+/* ================================
+   BATCH TITLE
+================================ */
 
 .batch-title{
   text-align:center;
@@ -87,7 +104,11 @@
   margin-bottom:8px;
 }
 
-/* Top 10 Students */
+
+/* ================================
+   TOP STUDENTS
+================================ */
+
 .top-students{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
@@ -124,16 +145,25 @@
   font-weight:bold;
 }
 
+
+/* ================================
+   STUDENT PHOTO
+================================ */
+
 .student-photo{
-  width:88px;
-  height:88px;
-  margin:5px auto 15px;
+  width:150px;
+  height:150px;
+  margin:5px auto 18px;
   border-radius:50%;
   background:#eef3f8;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:42px;
+  font-size:60px;
+  object-fit:cover;
+  object-position:center;
+  border:4px solid #fff;
+  box-shadow:0 6px 18px rgba(8,43,76,.15);
 }
 
 .student-rank h3{
@@ -166,6 +196,11 @@
   border:2px solid #cd7f32;
 }
 
+
+/* ================================
+   RESULT BOX
+================================ */
+
 .batch-result{
   max-width:700px;
   margin:0 auto 30px;
@@ -189,7 +224,26 @@
   margin-top:6px;
 }
 
+
+/* ================================
+   NOTE
+================================ */
+
+.note{
+  margin-top:20px;
+  padding:14px 16px;
+  background:#fff7e9;
+  border-left:4px solid #f28a24;
+  border-radius:8px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
 @media(max-width:600px){
+
   .batch-buttons{
     gap:10px;
   }
@@ -206,6 +260,12 @@
 
   .student-rank{
     padding:25px 8px 18px;
+  }
+
+  .student-photo{
+    width:120px;
+    height:120px;
+    font-size:50px;
   }
 
   .student-rank h3{
@@ -225,11 +285,16 @@
     font-size:18px;
   }
 }
+
 </style>
 
 </head>
 
 <body>
+
+<!-- ================================
+     TOP BAR
+================================ -->
 
 <div class="topbar">
   <div class="wrap">
@@ -238,474 +303,1433 @@
   </div>
 </div>
 
+<!-- ================================
+     HEADER
+================================ -->
+
 <header>
+
 <div class="wrap head">
 
 <a class="brand" href="index.html">
-  <img class="logo" src="assets/images/emblem.svg" alt="ಶಾಲೆಯ ಲಾಂಛನ">
+
+<img
+ class="logo"
+ src="assets/images/emblem.png"
+ alt="ಶಾಲೆಯ ಲಾಂಛನ">
+
   <div>
-    <div class="school-kn">ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</div>
-    <div class="school-en">Government High School Hadinabal</div>
-    <div class="motto">ವಿದ್ಯಾರ್ಥಿಗಳ ಭವಿಷ್ಯ — ನಮ್ಮ ಹೊಣೆಗಾರಿಕೆ</div>
+
+  <div class="school-kn">
+    ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
   </div>
+
+  <div class="school-en">
+    Government High School Hadinabal
+  </div>
+
+  <div class="motto">
+    ವಿದ್ಯಾರ್ಥಿಗಳ ಭವಿಷ್ಯ — ನಮ್ಮ ಹೊಣೆಗಾರಿಕೆ
+  </div>
+
+  </div>
+
 </a>
 
-<button class="menu" aria-label="ಮೆನು">☰</button>
+<button class="menu" aria-label="ಮೆನು">
+  ☰
+</button>
 
 <nav class="nav">
-  <a href="index.html">ಮುಖಪುಟ</a>
-  <a href="about.html">ನಮ್ಮ ಶಾಲೆ</a>
-  <a href="staff.html">ಶಿಕ್ಷಕ ವೃಂದ</a>
-  <a href="sdmc.html">SDMC</a>
-  <a class="active" href="sslc.html">SSLC</a>
-  <a href="achievements.html">ಸಾಧನೆಗಳು</a>
-  <a href="gallery.html">ಗ್ಯಾಲರಿ</a>
-  <a href="notices.html">ಪ್ರಕಟಣೆಗಳು</a>
-  <a href="contact.html">ಸಂಪರ್ಕ</a>
+
+<a href="index.html">ಮುಖಪುಟ</a>
+
+<a href="about.html">ನಮ್ಮ ಶಾಲೆ</a>
+
+<a href="staff.html">ಶಿಕ್ಷಕ ವೃಂದ</a>
+
+<a href="sdmc.html">SDMC</a>
+
+<a class="active" href="sslc.html">SSLC</a>
+
+<a href="achievements.html">ಸಾಧನೆಗಳು</a>
+
+<a href="gallery.html">ಗ್ಯಾಲರಿ</a>
+
+<a href="notices.html">ಪ್ರಕಟಣೆಗಳು</a>
+
+<a href="contact.html">ಸಂಪರ್ಕ</a>
+
 </nav>
 
 </div>
+
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- ================================
+     HERO
+================================ -->
 
 <section class="pagehero">
+
 <div class="wrap">
-  <span class="kicker" style="color:#ffd68a">10ನೇ ತರಗತಿ</span>
+
+  <span class="kicker" style="color:#ffd68a">
+    10ನೇ ತರಗತಿ
+  </span>
+
   <h1>SSLC</h1>
-  <p>ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ಪೋಷಕರಿಗೆ SSLC ಪರೀಕ್ಷೆ, ಫಲಿತಾಂಶ ಮತ್ತು ಸಾಧನೆಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಮುಖ ಮಾಹಿತಿ.</p>
+
+  <p>
+    ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ಪೋಷಕರಿಗೆ SSLC ಪರೀಕ್ಷೆ,
+    ಫಲಿತಾಂಶ ಮತ್ತು ಸಾಧನೆಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಮುಖ ಮಾಹಿತಿ.
+  </p>
+
 </div>
+
 </section>
 
-<!-- SSLC INFORMATION -->
+<!-- ================================
+     SSLC INFORMATION
+================================ -->
 
 <section class="section">
+
 <div class="wrap">
 
 <div class="section-head">
-  <span class="kicker">SSLC ಮಾಹಿತಿ</span>
-  <h2>ನಮ್ಮ SSLC ವಿಭಾಗ</h2>
-  <p>ಈ ಪುಟದಲ್ಲಿ ಶಾಲೆಯ SSLC ಸಂಬಂಧಿತ ಮಾಹಿತಿಯನ್ನು ವರ್ಷದಿಂದ ವರ್ಷಕ್ಕೆ ನವೀಕರಿಸಬಹುದು.</p>
+
+  <span class="kicker">
+    SSLC ಮಾಹಿತಿ
+  </span>
+
+  <h2>
+    ನಮ್ಮ SSLC ವಿಭಾಗ
+  </h2>
+
+  <p>
+    ಈ ಪುಟದಲ್ಲಿ ಶಾಲೆಯ SSLC ಸಂಬಂಧಿತ ಮಾಹಿತಿಯನ್ನು
+    ವರ್ಷದಿಂದ ವರ್ಷಕ್ಕೆ ನವೀಕರಿಸಬಹುದು.
+  </p>
+
 </div>
 
 <div class="cards">
 
 <article class="card">
-<div class="icon">📊</div>
-<h3>SSLC ಫಲಿತಾಂಶ</h3>
-<p>ವರ್ಷವಾರು ಫಲಿತಾಂಶ, ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ ಮತ್ತು ಇತರ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ನೋಡಿ.</p>
+
+  <div class="icon">📊</div>
+
+  <h3>
+    SSLC ಫಲಿತಾಂಶ
+  </h3>
+
+  <p>
+    ವರ್ಷವಾರು ಫಲಿತಾಂಶ, ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+    ಮತ್ತು ಇತರ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ನೋಡಿ.
+  </p>
+
 </article>
 
 <article class="card">
-<div class="icon">🏆</div>
-<h3>ಅತ್ಯುತ್ತಮ ಸಾಧನೆ</h3>
-<p>ಪ್ರತಿ ವರ್ಷದ ಅತ್ಯುತ್ತಮ 10 ವಿದ್ಯಾರ್ಥಿಗಳ ಸಾಧನೆಯನ್ನು ನೋಡಿ.</p>
+
+  <div class="icon">🏆</div>
+
+  <h3>
+    ಅತ್ಯುತ್ತಮ ಸಾಧನೆ
+  </h3>
+
+  <p>
+    ಪ್ರತಿ ವರ್ಷದ ಅತ್ಯುತ್ತಮ 10 ವಿದ್ಯಾರ್ಥಿಗಳ
+    ಸಾಧನೆಯನ್ನು ನೋಡಿ.
+  </p>
+
 </article>
 
 <article class="card">
-<div class="icon">📚</div>
-<h3>ಅಧ್ಯಯನ ಮಾಹಿತಿ</h3>
-<p>ಅಧ್ಯಯನ ಸಾಮಗ್ರಿ, ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಉಪಯುಕ್ತ ಸಂಪನ್ಮೂಲಗಳು.</p>
+
+  <div class="icon">📚</div>
+
+  <h3>
+    ಅಧ್ಯಯನ ಮಾಹಿತಿ
+  </h3>
+
+  <p>
+    ಅಧ್ಯಯನ ಸಾಮಗ್ರಿ, ಮಾರ್ಗದರ್ಶನ
+    ಮತ್ತು ಉಪಯುಕ್ತ ಸಂಪನ್ಮೂಲಗಳು.
+  </p>
+
 </article>
 
 <article class="card">
-<div class="icon">📢</div>
-<h3>SSLC ಪ್ರಕಟಣೆಗಳು</h3>
-<p>ಪರೀಕ್ಷಾ ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ಪ್ರಮುಖ ಪ್ರಕಟಣೆಗಳು.</p>
+
+  <div class="icon">📢</div>
+
+  <h3>
+    SSLC ಪ್ರಕಟಣೆಗಳು
+  </h3>
+
+  <p>
+    ಪರೀಕ್ಷಾ ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ಪ್ರಮುಖ ಪ್ರಕಟಣೆಗಳು.
+  </p>
+
 </article>
 
 </div>
+
 </div>
+
 </section>
 
-<!-- BATCH RESULTS -->
+<!-- ================================
+     BATCH RESULTS
+================================ -->
 
 <section class="section tint">
+
 <div class="wrap">
 
 <div class="section-head">
-  <span class="kicker">ಫಲಿತಾಂಶ ಮತ್ತು ಸಾಧನೆ</span>
-  <h2>ವರ್ಷವಾರು SSLC ಫಲಿತಾಂಶ</h2>
-  <p>ಒಂದು ಬ್ಯಾಚ್ ಆಯ್ಕೆ ಮಾಡಿ ಆ ವರ್ಷದ ಫಲಿತಾಂಶ ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ನೋಡಿ.</p>
+
+  <span class="kicker">
+    ಫಲಿತಾಂಶ ಮತ್ತು ಸಾಧನೆ
+  </span>
+
+  <h2>
+    ವರ್ಷವಾರು SSLC ಫಲಿತಾಂಶ
+  </h2>
+
+  <p>
+    ಒಂದು ಬ್ಯಾಚ್ ಆಯ್ಕೆ ಮಾಡಿ ಆ ವರ್ಷದ ಫಲಿತಾಂಶ
+    ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ನೋಡಿ.
+  </p>
+
 </div>
 
-<!-- BATCH BUTTONS -->
+<!-- ================================
+     BATCH BUTTONS
+================================ -->
 
 <div class="batch-buttons">
 
-<button class="batch-btn active" onclick="showBatch('batch2025', this)">
-  <span>2025–26</span>
-  <small>SSLC Batch</small>
+<button
+class="batch-btn active"
+onclick="showBatch('batch2025', this)">
+
+<span>2025–26</span>
+
+  <small>
+    SSLC Batch
+  </small>
+
 </button>
 
-<button class="batch-btn active" onclick="showBatch('batch2024', this)">
-  <span>2024–25</span>
-  <small>SSLC Batch</small>
+<button
+class="batch-btn"
+onclick="showBatch('batch2024', this)">
+
+<span>2024–25</span>
+
+  <small>
+    SSLC Batch
+  </small>
+
 </button>
 
-<button class="batch-btn" onclick="showBatch('batch2023', this)">
-  <span>2023–24</span>
-  <small>SSLC Batch</small>
+<button
+class="batch-btn"
+onclick="showBatch('batch2023', this)">
+
+<span>2023–24</span>
+
+  <small>
+    SSLC Batch
+  </small>
+
 </button>
 
-<button class="batch-btn" onclick="showBatch('batch2022', this)">
-  <span>2022–23</span>
-  <small>SSLC Batch</small>
+<button
+class="batch-btn"
+onclick="showBatch('batch2022', this)">
+
+<span>2022–23</span>
+
+  <small>
+    SSLC Batch
+  </small>
+
+</button>
+
 </button>
 
 </div>
 
-<!-- 2025-26 -->
+<!-- =====================================================
+     2025–26
+===================================================== -->
 
 <div id="batch2025" class="batch-content active">
 
 <div class="batch-result">
 
 <div class="result-box">
+
 ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
+
 <strong>81</strong>
+
 </div>
 
 <div class="result-box">
+
 ಉತ್ತೀರ್ಣರು
+
 <strong>81</strong>
+
 </div>
 
 <div class="result-box">
+
 ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+
 <strong>100%</strong>
+
 </div>
 
 </div>
 
 <div class="batch-title">
-<h2>🏆 2025–26 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು</h2>
-<p>ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು</p>
+
+  <h2>
+    🏆 2025–26 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
+  </h2>
+
+  <p>
+    ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
+  </p>
+
 </div>
 
 <div class="top-students">
 
+<!-- 1 -->
+
 <article class="student-rank first">
-<div class="rank">🥇</div>
-<img class="student-photo" src="assets/images/students/b25/student1.png" alt="Student Name">
-<h3>ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ</h3>
-<p>1ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">1</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student1.png"
+ alt="ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ">
+
+  <h3>
+    ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ
+  </h3>
+
+  <p>1ನೇ ಸ್ಥಾನ</p>
+
 <strong>593</strong>
+
 </article>
+
+<!-- 2 -->
 
 <article class="student-rank second">
-<div class="rank">🥈</div>
-<img class="student-photo" src="assets/images/students/b25/student2.png" alt="Student Name">
-<h3>ಜಿ. ವಿ. ಧನುಷ್</h3>
-<p>2ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">2</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student2.png"
+ alt="ಜಿ. ವಿ. ಧನುಷ್">
+
+  <h3>
+    ಜಿ. ವಿ. ಧನುಷ್
+  </h3>
+
+  <p>2ನೇ ಸ್ಥಾನ</p>
+
 <strong>591</strong>
+
 </article>
+
+<!-- 3 -->
 
 <article class="student-rank third">
-<div class="rank">🥉</div>
-<img class="student-photo" src="assets/images/students/b25/student3.png" alt="Student Name">
-<h3>ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ</h3>
-<p>3ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">3</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student3.png"
+ alt="ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ">
+
+  <h3>
+    ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ
+  </h3>
+
+  <p>3ನೇ ಸ್ಥಾನ</p>
+
 <strong>581</strong>
+
 </article>
 
+<!-- 4 -->
+
 <article class="student-rank">
-<div class="rank">4</div>
-<div class="student-photo">👩‍🎓</div>
-<h3>ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ</h3>
-<p>4ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">4</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ
+  </h3>
+
+  <p>4ನೇ ಸ್ಥಾನ</p>
+
 <strong>577</strong>
+
 </article>
 
+<!-- 5 -->
+
 <article class="student-rank">
-<div class="rank">5</div>
-<div class="student-photo">👨‍🎓</div>
-<h3>ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ</h3>
-<p>5ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">5</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ
+  </h3>
+
+  <p>5ನೇ ಸ್ಥಾನ</p>
+
 <strong>571</strong>
+
 </article>
 
+<!-- 6 -->
+
 <article class="student-rank">
-<div class="rank">6</div>
-<div class="student-photo">👩‍🎓</div>
-<h3>ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ</h3>
-<p>6ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">6</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ
+  </h3>
+
+  <p>6ನೇ ಸ್ಥಾನ</p>
+
 <strong>570</strong>
+
 </article>
 
+<!-- 7 -->
+
 <article class="student-rank">
-<div class="rank">7</div>
-<div class="student-photo">👨‍🎓</div>
-<h3>ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ</h3>
-<p>7ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">7</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ
+  </h3>
+
+  <p>7ನೇ ಸ್ಥಾನ</p>
+
 <strong>567</strong>
+
 </article>
 
+<!-- 8 -->
+
 <article class="student-rank">
-<div class="rank">8</div>
-<div class="student-photo">👩‍🎓</div>
-<h3>ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ</h3>
-<p>8ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">8</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ
+  </h3>
+
+  <p>8ನೇ ಸ್ಥಾನ</p>
+
 <strong>564</strong>
+
 </article>
 
+<!-- 9 -->
+
 <article class="student-rank">
-<div class="rank">9</div>
-<div class="student-photo">👨‍🎓</div>
-<h3>ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ</h3>
-<p>9ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">9</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ
+  </h3>
+
+  <p>9ನೇ ಸ್ಥಾನ</p>
+
 <strong>560</strong>
+
 </article>
+
+<!-- 10 -->
 
 <article class="student-rank">
-<div class="rank">10</div>
-<div class="student-photo">👩‍🎓</div>
-<h3>ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ</h3>
-<p>10ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">10</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ
+  </h3>
+
+  <p>10ನೇ ಸ್ಥಾನ</p>
+
 <strong>559</strong>
+
 </article>
 
 </div>
+
 </div>
 
-<!-- 2024-25 -->
+<!-- =====================================================
+     2024–25
+===================================================== -->
 
 <div id="batch2024" class="batch-content">
 
-<div class="batch-title">
-<h2>🏆 2024–25 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು</h2>
-<p>ಈ ವರ್ಷದ ವಿದ್ಯಾರ್ಥಿಗಳ ಮಾಹಿತಿಯನ್ನು ಸೇರಿಸಿ.</p>
-</div>
+<div class="batch-result">
 
 <div class="result-box">
+
 ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
+
 <strong>81</strong>
+
 </div>
 
 <div class="result-box">
+
 ಉತ್ತೀರ್ಣರು
+
 <strong>81</strong>
+
 </div>
 
 <div class="result-box">
+
 ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+
 <strong>100%</strong>
+
 </div>
 
 </div>
 
 <div class="batch-title">
-<h2>🏆 2024–25 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು</h2>
-<p>ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು</p>
+
+  <h2>
+    🏆 2024–25 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
+  </h2>
+
+  <p>
+    ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
+  </p>
+
 </div>
 
 <div class="top-students">
 
 <article class="student-rank first">
-<div class="rank">🥇</div>
-<img class="student-photo" src="assets/images/students/b25/student1.png" alt="Student Name">
-<h3>ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ</h3>
-<p>1ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">1</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student1.png"
+ alt="ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ">
+
+  <h3>
+    ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ
+  </h3>
+
+  <p>1ನೇ ಸ್ಥಾನ</p>
+
 <strong>593</strong>
+
 </article>
 
 <article class="student-rank second">
-<div class="rank">🥈</div>
-<img class="student-photo" src="assets/images/students/b25/student2.png" alt="Student Name">
-<h3>ಜಿ. ವಿ. ಧನುಷ್</h3>
-<p>2ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">2</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student2.png"
+ alt="ಜಿ. ವಿ. ಧನುಷ್">
+
+  <h3>
+    ಜಿ. ವಿ. ಧನುಷ್
+  </h3>
+
+  <p>2ನೇ ಸ್ಥಾನ</p>
+
 <strong>591</strong>
+
 </article>
 
 <article class="student-rank third">
-<div class="rank">🥉</div>
-<img class="student-photo" src="assets/images/students/b25/student3.png" alt="Student Name">
-<h3>ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ</h3>
-<p>3ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">3</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student3.png"
+ alt="ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ">
+
+  <h3>
+    ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ
+  </h3>
+
+  <p>3ನೇ ಸ್ಥಾನ</p>
+
 <strong>581</strong>
+
 </article>
 
 <article class="student-rank">
-<div class="rank">4</div>
-<div class="student-photo">👩‍🎓</div>
-<h3>ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ</h3>
-<p>4ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">4</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ
+  </h3>
+
+  <p>4ನೇ ಸ್ಥಾನ</p>
+
 <strong>577</strong>
+
 </article>
 
 <article class="student-rank">
-<div class="rank">5</div>
-<div class="student-photo">👨‍🎓</div>
-<h3>ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ</h3>
-<p>5ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">5</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ
+  </h3>
+
+  <p>5ನೇ ಸ್ಥಾನ</p>
+
 <strong>571</strong>
+
 </article>
 
 <article class="student-rank">
-<div class="rank">6</div>
-<div class="student-photo">👩‍🎓</div>
-<h3>ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ</h3>
-<p>6ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">6</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ
+  </h3>
+
+  <p>6ನೇ ಸ್ಥಾನ</p>
+
 <strong>570</strong>
+
 </article>
 
 <article class="student-rank">
-<div class="rank">7</div>
-<div class="student-photo">👨‍🎓</div>
-<h3>ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ</h3>
-<p>7ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">7</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ
+  </h3>
+
+  <p>7ನೇ ಸ್ಥಾನ</p>
+
 <strong>567</strong>
+
 </article>
 
 <article class="student-rank">
-<div class="rank">8</div>
-<div class="student-photo">👩‍🎓</div>
-<h3>ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ</h3>
-<p>8ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">8</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ
+  </h3>
+
+  <p>8ನೇ ಸ್ಥಾನ</p>
+
 <strong>564</strong>
+
 </article>
 
 <article class="student-rank">
-<div class="rank">9</div>
-<div class="student-photo">👨‍🎓</div>
-<h3>ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ</h3>
-<p>9ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">9</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ
+  </h3>
+
+  <p>9ನೇ ಸ್ಥಾನ</p>
+
 <strong>560</strong>
+
 </article>
 
 <article class="student-rank">
-<div class="rank">10</div>
-<div class="student-photo">👩‍🎓</div>
-<h3>ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ</h3>
-<p>10ನೇ ಸ್ಥಾನ</p>
+
+  <div class="rank">10</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ
+  </h3>
+
+  <p>10ನೇ ಸ್ಥಾನ</p>
+
 <strong>559</strong>
+
 </article>
 
 </div>
 
-
 </div>
 
-<!-- 2023-24 -->
+<!-- =====================================================
+     2023–24
+===================================================== -->
+
 
 <div id="batch2023" class="batch-content">
 
+<div class="batch-result">
+
+<div class="result-box">
+
+ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
+
+<strong>81</strong>
+
+</div>
+
+<div class="result-box">
+
+ಉತ್ತೀರ್ಣರು
+
+<strong>81</strong>
+
+</div>
+
+<div class="result-box">
+
+ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+
+<strong>100%</strong>
+
+</div>
+
+</div>
+
 <div class="batch-title">
-<h2>🏆 2023–24 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು</h2>
+
+  <h2>
+    🏆 2023–24 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
+  </h2>
+
+  <p>
+    ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
+  </p>
+
 </div>
 
-<div class="note">
-<strong>📋 ಮಾಹಿತಿ:</strong> 2023–24 ಬ್ಯಾಚ್‌ನ ಫಲಿತಾಂಶ ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ಸೇರಿಸಿ.
-</div>
+<div class="top-students">
+
+<!-- 1 -->
+
+<article class="student-rank first">
+
+  <div class="rank">1
+  </div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student1.png"
+ alt="ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ">
+
+  <h3>
+    ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ
+  </h3>
+
+  <p>1ನೇ ಸ್ಥಾನ</p>
+
+<strong>593</strong>
+
+</article>
+
+<!-- 2 -->
+
+<article class="student-rank second">
+
+  <div class="rank">2</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student2.png"
+ alt="ಜಿ. ವಿ. ಧನುಷ್">
+
+  <h3>
+    ಜಿ. ವಿ. ಧನುಷ್
+  </h3>
+
+  <p>2ನೇ ಸ್ಥಾನ</p>
+
+<strong>591</strong>
+
+</article>
+
+<!-- 3 -->
+
+<article class="student-rank third">
+
+  <div class="rank">3</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student3.png"
+ alt="ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ">
+
+  <h3>
+    ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ
+  </h3>
+
+  <p>3ನೇ ಸ್ಥಾನ</p>
+
+<strong>581</strong>
+
+</article>
+
+<!-- 4 -->
+
+<article class="student-rank">
+
+  <div class="rank">4</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ
+  </h3>
+
+  <p>4ನೇ ಸ್ಥಾನ</p>
+
+<strong>577</strong>
+
+</article>
+
+<!-- 5 -->
+
+<article class="student-rank">
+
+  <div class="rank">5</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ
+  </h3>
+
+  <p>5ನೇ ಸ್ಥಾನ</p>
+
+<strong>571</strong>
+
+</article>
+
+<!-- 6 -->
+
+<article class="student-rank">
+
+  <div class="rank">6</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ
+  </h3>
+
+  <p>6ನೇ ಸ್ಥಾನ</p>
+
+<strong>570</strong>
+
+</article>
+
+<!-- 7 -->
+
+<article class="student-rank">
+
+  <div class="rank">7</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ
+  </h3>
+
+  <p>7ನೇ ಸ್ಥಾನ</p>
+
+<strong>567</strong>
+
+</article>
+
+<!-- 8 -->
+
+<article class="student-rank">
+
+  <div class="rank">8</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ
+  </h3>
+
+  <p>8ನೇ ಸ್ಥಾನ</p>
+
+<strong>564</strong>
+
+</article>
+
+<!-- 9 -->
+
+<article class="student-rank">
+
+  <div class="rank">9</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ
+  </h3>
+
+  <p>9ನೇ ಸ್ಥಾನ</p>
+
+<strong>560</strong>
+
+</article>
+
+<!-- 10 -->
+
+<article class="student-rank">
+
+  <div class="rank">10</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ
+  </h3>
+
+  <p>10ನೇ ಸ್ಥಾನ</p>
+
+<strong>559</strong>
+
+</article>
 
 </div>
 
-<!-- 2022-23 -->
+</div>
+
+<!-- =====================================================
+     2022–23
+===================================================== -->
 
 <div id="batch2022" class="batch-content">
 
+<div class="batch-result">
+
+<div class="result-box">
+
+ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
+
+<strong>81</strong>
+
+</div>
+
+<div class="result-box">
+
+ಉತ್ತೀರ್ಣರು
+
+<strong>81</strong>
+
+</div>
+
+<div class="result-box">
+
+ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+
+<strong>100%</strong>
+
+</div>
+
+</div>
+
 <div class="batch-title">
-<h2>🏆 2022–23 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು</h2>
+
+  <h2>
+    🏆 2022–23 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
+  </h2>
+
+  <p>
+    ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
+  </p>
+
 </div>
 
-<div class="note">
-<strong>📋 ಮಾಹಿತಿ:</strong> 2022–23 ಬ್ಯಾಚ್‌ನ ಫಲಿತಾಂಶ ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ಸೇರಿಸಿ.
-</div>
+<div class="top-students">
+
+<!-- 1 -->
+
+<article class="student-rank first">
+
+  <div class="rank">1
+  </div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student1.png"
+ alt="ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ">
+
+  <h3>
+    ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ
+  </h3>
+
+  <p>1ನೇ ಸ್ಥಾನ</p>
+
+<strong>593</strong>
+
+</article>
+
+<!-- 2 -->
+
+<article class="student-rank second">
+
+  <div class="rank">2</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student2.png"
+ alt="ಜಿ. ವಿ. ಧನುಷ್">
+
+  <h3>
+    ಜಿ. ವಿ. ಧನುಷ್
+  </h3>
+
+  <p>2ನೇ ಸ್ಥಾನ</p>
+
+<strong>591</strong>
+
+</article>
+
+<!-- 3 -->
+
+<article class="student-rank third">
+
+  <div class="rank">3</div>
+
+<img
+ class="student-photo"
+ src="assets/images/students/b25/student3.png"
+ alt="ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ">
+
+  <h3>
+    ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ
+  </h3>
+
+  <p>3ನೇ ಸ್ಥಾನ</p>
+
+<strong>581</strong>
+
+</article>
+
+<!-- 4 -->
+
+<article class="student-rank">
+
+  <div class="rank">4</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ
+  </h3>
+
+  <p>4ನೇ ಸ್ಥಾನ</p>
+
+<strong>577</strong>
+
+</article>
+
+<!-- 5 -->
+
+<article class="student-rank">
+
+  <div class="rank">5</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ
+  </h3>
+
+  <p>5ನೇ ಸ್ಥಾನ</p>
+
+<strong>571</strong>
+
+</article>
+
+<!-- 6 -->
+
+<article class="student-rank">
+
+  <div class="rank">6</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ
+  </h3>
+
+  <p>6ನೇ ಸ್ಥಾನ</p>
+
+<strong>570</strong>
+
+</article>
+
+<!-- 7 -->
+
+<article class="student-rank">
+
+  <div class="rank">7</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ
+  </h3>
+
+  <p>7ನೇ ಸ್ಥಾನ</p>
+
+<strong>567</strong>
+
+</article>
+
+<!-- 8 -->
+
+<article class="student-rank">
+
+  <div class="rank">8</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ
+  </h3>
+
+  <p>8ನೇ ಸ್ಥಾನ</p>
+
+<strong>564</strong>
+
+</article>
+
+<!-- 9 -->
+
+<article class="student-rank">
+
+  <div class="rank">9</div>
+
+  <div class="student-photo">👨‍🎓</div>
+
+  <h3>
+    ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ
+  </h3>
+
+  <p>9ನೇ ಸ್ಥಾನ</p>
+
+<strong>560</strong>
+
+</article>
+
+<!-- 10 -->
+
+<article class="student-rank">
+
+  <div class="rank">10</div>
+
+  <div class="student-photo">👩‍🎓</div>
+
+  <h3>
+    ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ
+  </h3>
+
+  <p>10ನೇ ಸ್ಥಾನ</p>
+
+<strong>559</strong>
+
+</article>
 
 </div>
 
 </div>
+</div>
+
+</div>
+
 </section>
 
-<!-- WISHES -->
+<!-- ================================
+     WISHES
+================================ -->
 
 <section class="section tint">
+
 <div class="wrap split">
 
 <div>
-<span class="kicker">ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ</span>
-<h2>SSLC ಪರೀಕ್ಷೆಗೆ ಶುಭಾಶಯಗಳು!</h2>
 
-<p>ನಮ್ಮ ಎಲ್ಲಾ 10ನೇ ತರಗತಿ ವಿದ್ಯಾರ್ಥಿಗಳು ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಪರೀಕ್ಷೆಯನ್ನು ಎದುರಿಸಿ ಉತ್ತಮ ಫಲಿತಾಂಶ ಪಡೆಯಲಿ.</p>
+<span class="kicker">
+  ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ
+</span>
+
+<h2>
+  SSLC ಪರೀಕ್ಷೆಗೆ ಶುಭಾಶಯಗಳು!
+</h2>
+
+<p>
+  ನಮ್ಮ ಎಲ್ಲಾ 10ನೇ ತರಗತಿ ವಿದ್ಯಾರ್ಥಿಗಳು
+  ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಪರೀಕ್ಷೆಯನ್ನು ಎದುರಿಸಿ
+  ಉತ್ತಮ ಫಲಿತಾಂಶ ಪಡೆಯಲಿ.
+</p>
 
 <div class="checks">
-<div class="check"><b>✓</b> ನಿಯಮಿತ ಅಧ್ಯಯನ ಮತ್ತು ಪುನರವಲೋಕನ</div>
-<div class="check"><b>✓</b> ಸಮಯದ ಸರಿಯಾದ ನಿರ್ವಹಣೆ</div>
-<div class="check"><b>✓</b> ಶಿಕ್ಷಕರ ಮಾರ್ಗದರ್ಶನದ ಸದ್ಬಳಕೆ</div>
-<div class="check"><b>✓</b> ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಪರೀಕ್ಷೆ ಎದುರಿಸಿ</div>
+
+<div class="check">
+  <b>✓</b>
+  ನಿಯಮಿತ ಅಧ್ಯಯನ ಮತ್ತು ಪುನರವಲೋಕನ
 </div>
+
+<div class="check">
+  <b>✓</b>
+  ಸಮಯದ ಸರಿಯಾದ ನಿರ್ವಹಣೆ
+</div>
+
+<div class="check">
+  <b>✓</b>
+  ಶಿಕ್ಷಕರ ಮಾರ್ಗದರ್ಶನದ ಸದ್ಬಳಕೆ
+</div>
+
+<div class="check">
+  <b>✓</b>
+  ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಪರೀಕ್ಷೆ ಎದುರಿಸಿ
+</div>
+
+</div>
+
 </div>
 
 <div class="quote">
-<p>“ಯಶಸ್ಸು ಒಂದೇ ದಿನದಲ್ಲಿ ಸಿಗುವುದಿಲ್ಲ; ಪ್ರತಿದಿನದ ಪರಿಶ್ರಮವೇ ಅದಕ್ಕೆ ದಾರಿ.”</p>
-<strong>— SSLC ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಶುಭ ಹಾರೈಕೆಗಳು</strong>
+
+<p>
+  “ಯಶಸ್ಸು ಒಂದೇ ದಿನದಲ್ಲಿ ಸಿಗುವುದಿಲ್ಲ;
+  ಪ್ರತಿದಿನದ ಪರಿಶ್ರಮವೇ ಅದಕ್ಕೆ ದಾರಿ.”
+</p>
+
+<strong>
+  — SSLC ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಶುಭ ಹಾರೈಕೆಗಳು
+</strong>
+
 </div>
 
 </div>
-</section>
 
-<section class="section">
-<div class="wrap">
-</div>
-</div>
 </section>
 
 </main>
 
+<!-- ================================
+     FOOTER
+================================ -->
+
 <footer class="footer">
+
 <div class="wrap footer-grid">
 
 <div>
-<h3>ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</h3>
-<p>Government High School Hadinabal</p>
-<p>ವಿದ್ಯಾರ್ಥಿಗಳ ಸರ್ವತೋಮುಖ ಅಭಿವೃದ್ಧಿಗೆ ಸಮರ್ಪಣೆ.</p>
+
+<h3>
+  ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
+</h3>
+
+<p>
+  Government High School Hadinabal
+</p>
+
+<p>
+  ವಿದ್ಯಾರ್ಥಿಗಳ ಸರ್ವತೋಮುಖ ಅಭಿವೃದ್ಧಿಗೆ ಸಮರ್ಪಣೆ.
+</p>
+
 </div>
 
 <div>
-<h4>ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು</h4>
-<p><a href="about.html">ನಮ್ಮ ಶಾಲೆ</a></p>
-<p><a href="sdmc.html">SDMC</a></p>
-<p><a href="sslc.html">SSLC</a></p>
-<p><a href="achievements.html">ಸಾಧನೆಗಳು</a></p>
+
+<h4>
+  ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು
+</h4>
+
+<p>
+  <a href="about.html">ನಮ್ಮ ಶಾಲೆ</a>
+</p>
+
+<p>
+  <a href="sdmc.html">SDMC</a>
+</p>
+
+<p>
+  <a href="sslc.html">SSLC</a>
+</p>
+
+<p>
+  <a href="achievements.html">ಸಾಧನೆಗಳು</a>
+</p>
+
 </div>
 
 <div>
-<h4>ಸಂಪರ್ಕ</h4>
-<p>📍 ಹಡಿನಬಾಳ, ಹೊನ್ನಾವರ, ಉತ್ತರ ಕನ್ನಡ</p>
-<p>📞 +91 76768 10378</p>
+
+<h4>
+  ಸಂಪರ್ಕ
+</h4>
+
+<p>
+  📍 ಹಡಿನಬಾಳ, ಹೊನ್ನಾವರ, ಉತ್ತರ ಕನ್ನಡ
+</p>
+
+<p>
+  📞 +91 76768 10378
+</p>
+
 </div>
 
 </div>
+
+<div class="bottom">
 
 <div class="wrap bottom-inner">
-    <span>© <span id="year"></span> ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</span>
-    <span class="designer-credit">Designed & Developed by Sanketh Honavar</span>
-  </div>
+
+<span>
+  © <span id="year"></span>
+  ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
+</span>
+
+<span class="designer-credit">
+  Designed &amp; Developed by Sanketh Honavar
+</span>
+
+</div>
+
+</div>
+
 </footer>
 
 <script src="assets/js/main.js"></script>
 
 <script>
+
+/* ==========================================
+   SSLC BATCH SWITCHER
+========================================== */
+
 function showBatch(batchId, button) {
 
-  // Hide all batch information
+  // Hide every batch
   document.querySelectorAll('.batch-content').forEach(function(batch) {
     batch.classList.remove('active');
   });
 
-  // Remove active style from all buttons
+  // Remove active state from every button
   document.querySelectorAll('.batch-btn').forEach(function(btn) {
     btn.classList.remove('active');
   });
 
   // Show selected batch
-  document.getElementById(batchId).classList.add('active');
+  var selectedBatch = document.getElementById(batchId);
+
+  if (selectedBatch) {
+    selectedBatch.classList.add('active');
+  }
 
   // Highlight selected button
-  button.classList.add('active');
+  if (button) {
+    button.classList.add('active');
+  }
+
+  // Smoothly move to batch content
+  if (selectedBatch) {
+    setTimeout(function() {
+      selectedBatch.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 50);
+  }
 }
+
+
+/* ==========================================
+   DEFAULT BATCH
+========================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  var defaultBatch = document.getElementById('batch2025');
+
+  if (defaultBatch) {
+    defaultBatch.classList.add('active');
+  }
+
+});
+
 </script>
 
 </body>
