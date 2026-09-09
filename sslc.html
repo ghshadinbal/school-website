@@ -3,18 +3,27 @@
 <html lang="kn">
 
 <head>
+
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ - SSLC ಫಲಿತಾಂಶ ಮತ್ತು ವಿದ್ಯಾರ್ಥಿಗಳ ಸಾಧನೆ">
-<title>SSLC | ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</title>
+
+<meta
+name="description"
+content="ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ - SSLC ಫಲಿತಾಂಶ, ಸಾಧನೆ ಮತ್ತು ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆಗಳು">
+
+<title>
+SSLC | ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
+</title>
 
 <link rel="stylesheet" href="assets/css/style.css">
 
+
 <style>
 
-/* ================================
+/* =====================================================
    SSLC BATCH BUTTONS
-================================ */
+===================================================== */
 
 .batch-buttons{
   display:flex;
@@ -64,9 +73,9 @@
 }
 
 
-/* ================================
+/* =====================================================
    BATCH CONTENT
-================================ */
+===================================================== */
 
 .batch-content{
   display:none;
@@ -77,7 +86,13 @@
   display:block;
 }
 
+
+/* =====================================================
+   FADE ANIMATION
+===================================================== */
+
 @keyframes fadeIn{
+
   from{
     opacity:0;
     transform:translateY(15px);
@@ -87,12 +102,13 @@
     opacity:1;
     transform:translateY(0);
   }
+
 }
 
 
-/* ================================
+/* =====================================================
    BATCH TITLE
-================================ */
+===================================================== */
 
 .batch-title{
   text-align:center;
@@ -105,9 +121,9 @@
 }
 
 
-/* ================================
+/* =====================================================
    TOP STUDENTS
-================================ */
+===================================================== */
 
 .top-students{
   display:grid;
@@ -146,9 +162,9 @@
 }
 
 
-/* ================================
+/* =====================================================
    STUDENT PHOTO
-================================ */
+===================================================== */
 
 .student-photo{
   width:150px;
@@ -197,9 +213,9 @@
 }
 
 
-/* ================================
+/* =====================================================
    RESULT BOX
-================================ */
+===================================================== */
 
 .batch-result{
   max-width:700px;
@@ -225,22 +241,177 @@
 }
 
 
-/* ================================
-   NOTE
-================================ */
+/* =====================================================
+   MODEL QUESTION PAPERS
+===================================================== */
 
-.note{
-  margin-top:20px;
-  padding:14px 16px;
-  background:#fff7e9;
-  border-left:4px solid #f28a24;
-  border-radius:8px;
+.paper-years{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin:30px 0;
+}
+
+.paper-year{
+  border:none;
+  background:#fff;
+  color:#12355b;
+  padding:12px 24px;
+  border-radius:25px;
+  cursor:pointer;
+  font-family:inherit;
+  font-weight:700;
+  box-shadow:0 5px 16px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.paper-year:hover{
+  transform:translateY(-3px);
+  box-shadow:0 9px 22px rgba(0,0,0,.12);
+}
+
+.paper-year.active{
+  background:#12355b;
+  color:#fff;
 }
 
 
-/* ================================
+/* =====================================================
+   MODEL PAPER CONTENT
+===================================================== */
+
+.paper-year-content{
+  display:none;
+  animation:fadeIn .4s ease;
+}
+
+.paper-year-content.active{
+  display:block;
+}
+
+
+/* =====================================================
+   MODEL PAPER GRID
+===================================================== */
+
+.model-papers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
+
+/* =====================================================
+   PAPER CARD
+===================================================== */
+
+.paper-card{
+  background:#fff;
+  padding:25px 20px;
+  border-radius:18px;
+  text-align:center;
+  border:1px solid #eef2f6;
+  box-shadow:0 7px 24px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.paper-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 32px rgba(0,0,0,.13);
+}
+
+.paper-icon{
+  width:65px;
+  height:65px;
+  margin:0 auto 15px;
+  border-radius:16px;
+  background:#eef3f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+}
+
+.paper-card h3{
+  color:#12355b;
+  margin:8px 0;
+  font-size:20px;
+}
+
+.paper-card p{
+  color:#777;
+  font-size:14px;
+  margin:6px 0 18px;
+}
+
+
+/* =====================================================
+   PAPER BUTTONS
+===================================================== */
+
+.paper-buttons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.paper-btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:9px 15px;
+  border-radius:20px;
+  font-size:14px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.paper-btn.view{
+  background:#12355b;
+  color:#fff;
+}
+
+.paper-btn.download{
+  background:#f4a622;
+  color:#fff;
+}
+
+.paper-btn:hover{
+  transform:translateY(-2px);
+  opacity:.9;
+}
+
+
+/* =====================================================
+   NOTE
+===================================================== */
+
+.note{
+  display:block;
+  width:100%;
+  margin:20px 0 0;
+  padding:15px 18px;
+  box-sizing:border-box;
+
+  background:#fff8e8;
+  border-left:4px solid #f4a622;
+  border-radius:8px;
+
+  color:#555;
+  line-height:1.7;
+  text-align:left;
+}
+
+.note strong{
+  display:inline;
+  color:#12355b;
+  margin-right:5px;
+}
+
+/* =====================================================
    MOBILE
-================================ */
+===================================================== */
 
 @media(max-width:600px){
 
@@ -284,28 +455,59 @@
   .result-box strong{
     font-size:18px;
   }
+
+  .model-papers{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .paper-card{
+    padding:20px 15px;
+  }
+
+  .paper-years{
+    gap:8px;
+  }
+
+  .paper-year{
+    padding:10px 17px;
+    font-size:14px;
+  }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<!-- ================================
+
+<!-- =====================================================
      TOP BAR
-================================ -->
+===================================================== -->
 
 <div class="topbar">
+
   <div class="wrap">
-    <span>🇮🇳 ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ</span>
-    <span>ಜ್ಞಾನ • ಶಿಸ್ತು • ಸಾಧನೆ</span>
+
+    <span>
+      🇮🇳 ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
+    </span>
+
+    <span>
+      ಜ್ಞಾನ • ಶಿಸ್ತು • ಸಾಧನೆ
+    </span>
+
   </div>
+
 </div>
 
-<!-- ================================
+
+<!-- =====================================================
      HEADER
-================================ -->
+===================================================== -->
 
 <header>
 
@@ -318,47 +520,71 @@
  src="assets/images/emblem.png"
  alt="ಶಾಲೆಯ ಲಾಂಛನ">
 
-  <div>
+<div>
 
-  <div class="school-kn">
-    ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
-  </div>
+<div class="school-kn">
+  ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
+</div>
 
-  <div class="school-en">
-    Government High School Hadinabal
-  </div>
+<div class="school-en">
+  Government High School Hadinabal
+</div>
 
-  <div class="motto">
-    ವಿದ್ಯಾರ್ಥಿಗಳ ಭವಿಷ್ಯ — ನಮ್ಮ ಹೊಣೆಗಾರಿಕೆ
-  </div>
+<div class="motto">
+  ವಿದ್ಯಾರ್ಥಿಗಳ ಭವಿಷ್ಯ — ನಮ್ಮ ಹೊಣೆಗಾರಿಕೆ
+</div>
 
-  </div>
+</div>
 
 </a>
 
-<button class="menu" aria-label="ಮೆನು">
-  ☰
+
+<button
+class="menu"
+aria-label="ಮೆನು">
+
+☰
+
 </button>
+
 
 <nav class="nav">
 
-<a href="index.html">ಮುಖಪುಟ</a>
+<a href="index.html">
+  ಮುಖಪುಟ
+</a>
 
-<a href="about.html">ನಮ್ಮ ಶಾಲೆ</a>
+<a href="about.html">
+  ನಮ್ಮ ಶಾಲೆ
+</a>
 
-<a href="staff.html">ಶಿಕ್ಷಕ ವೃಂದ</a>
+<a href="staff.html">
+  ಶಿಕ್ಷಕ ವೃಂದ
+</a>
 
-<a href="sdmc.html">SDMC</a>
+<a href="sdmc.html">
+  SDMC
+</a>
 
-<a class="active" href="sslc.html">SSLC</a>
+<a class="active" href="sslc.html">
+  SSLC
+</a>
 
-<a href="achievements.html">ಸಾಧನೆಗಳು</a>
+<a href="achievements.html">
+  ಸಾಧನೆಗಳು
+</a>
 
-<a href="gallery.html">ಗ್ಯಾಲರಿ</a>
+<a href="gallery.html">
+  ಗ್ಯಾಲರಿ
+</a>
 
-<a href="notices.html">ಪ್ರಕಟಣೆಗಳು</a>
+<a href="notices.html">
+  ಪ್ರಕಟಣೆಗಳು
+</a>
 
-<a href="contact.html">ಸಂಪರ್ಕ</a>
+<a href="contact.html">
+  ಸಂಪರ್ಕ
+</a>
 
 </nav>
 
@@ -366,34 +592,44 @@
 
 </header>
 
+
 <main>
 
-<!-- ================================
+
+<!-- =====================================================
      HERO
-================================ -->
+===================================================== -->
 
 <section class="pagehero">
 
 <div class="wrap">
 
-  <span class="kicker" style="color:#ffd68a">
-    10ನೇ ತರಗತಿ
-  </span>
+<span
+class="kicker"
+style="color:#ffd68a">
 
-  <h1>SSLC</h1>
+10ನೇ ತರಗತಿ
 
-  <p>
-    ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ಪೋಷಕರಿಗೆ SSLC ಪರೀಕ್ಷೆ,
-    ಫಲಿತಾಂಶ ಮತ್ತು ಸಾಧನೆಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಮುಖ ಮಾಹಿತಿ.
-  </p>
+</span>
+
+<h1>
+  SSLC
+</h1>
+
+<p>
+  ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ಪೋಷಕರಿಗೆ SSLC ಪರೀಕ್ಷೆ,
+  ಫಲಿತಾಂಶ, ಸಾಧನೆ ಮತ್ತು ಅಧ್ಯಯನ ಸಾಮಗ್ರಿಗಳಿಗೆ
+  ಸಂಬಂಧಿಸಿದ ಪ್ರಮುಖ ಮಾಹಿತಿ.
+</p>
 
 </div>
 
 </section>
 
-<!-- ================================
+
+<!-- =====================================================
      SSLC INFORMATION
-================================ -->
+===================================================== -->
 
 <section class="section">
 
@@ -401,81 +637,97 @@
 
 <div class="section-head">
 
-  <span class="kicker">
-    SSLC ಮಾಹಿತಿ
-  </span>
+<span class="kicker">
+  SSLC ಮಾಹಿತಿ
+</span>
 
-  <h2>
-    ನಮ್ಮ SSLC ವಿಭಾಗ
-  </h2>
+<h2>
+  ನಮ್ಮ SSLC ವಿಭಾಗ
+</h2>
 
-  <p>
-    ಈ ಪುಟದಲ್ಲಿ ಶಾಲೆಯ SSLC ಸಂಬಂಧಿತ ಮಾಹಿತಿಯನ್ನು
-    ವರ್ಷದಿಂದ ವರ್ಷಕ್ಕೆ ನವೀಕರಿಸಬಹುದು.
-  </p>
+<p>
+  SSLC ಪರೀಕ್ಷೆಗೆ ಸಂಬಂಧಿಸಿದ ಫಲಿತಾಂಶ,
+  ಸಾಧನೆ, ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ ಮತ್ತು
+  ಇತರ ಪ್ರಮುಖ ಮಾಹಿತಿಯನ್ನು ಇಲ್ಲಿ ಪಡೆಯಬಹುದು.
+</p>
 
 </div>
 
+
 <div class="cards">
 
-<article class="card">
-
-  <div class="icon">📊</div>
-
-  <h3>
-    SSLC ಫಲಿತಾಂಶ
-  </h3>
-
-  <p>
-    ವರ್ಷವಾರು ಫಲಿತಾಂಶ, ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
-    ಮತ್ತು ಇತರ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ನೋಡಿ.
-  </p>
-
-</article>
 
 <article class="card">
 
-  <div class="icon">🏆</div>
+<div class="icon">
+  📊
+</div>
 
-  <h3>
-    ಅತ್ಯುತ್ತಮ ಸಾಧನೆ
-  </h3>
+<h3>
+  SSLC ಫಲಿತಾಂಶ
+</h3>
 
-  <p>
-    ಪ್ರತಿ ವರ್ಷದ ಅತ್ಯುತ್ತಮ 10 ವಿದ್ಯಾರ್ಥಿಗಳ
-    ಸಾಧನೆಯನ್ನು ನೋಡಿ.
-  </p>
+<p>
+  ವರ್ಷವಾರು ಫಲಿತಾಂಶ, ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+  ಮತ್ತು ಇತರ ವಿವರಗಳನ್ನು ಇಲ್ಲಿ ನೋಡಿ.
+</p>
 
 </article>
+
 
 <article class="card">
 
-  <div class="icon">📚</div>
+<div class="icon">
+  🏆
+</div>
 
-  <h3>
-    ಅಧ್ಯಯನ ಮಾಹಿತಿ
-  </h3>
+<h3>
+  ಅತ್ಯುತ್ತಮ ಸಾಧನೆ
+</h3>
 
-  <p>
-    ಅಧ್ಯಯನ ಸಾಮಗ್ರಿ, ಮಾರ್ಗದರ್ಶನ
-    ಮತ್ತು ಉಪಯುಕ್ತ ಸಂಪನ್ಮೂಲಗಳು.
-  </p>
+<p>
+  ಪ್ರತಿ ವರ್ಷದ ಅತ್ಯುತ್ತಮ ವಿದ್ಯಾರ್ಥಿಗಳ
+  ಸಾಧನೆಯನ್ನು ನೋಡಿ.
+</p>
 
 </article>
+
 
 <article class="card">
 
-  <div class="icon">📢</div>
+<div class="icon">
+  📚
+</div>
 
-  <h3>
-    SSLC ಪ್ರಕಟಣೆಗಳು
-  </h3>
+<h3>
+  ಅಧ್ಯಯನ ಮಾಹಿತಿ
+</h3>
 
-  <p>
-    ಪರೀಕ್ಷಾ ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ಪ್ರಮುಖ ಪ್ರಕಟಣೆಗಳು.
-  </p>
+<p>
+  ಅಧ್ಯಯನ ಸಾಮಗ್ರಿ, ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ,
+  ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಉಪಯುಕ್ತ ಸಂಪನ್ಮೂಲಗಳು.
+</p>
 
 </article>
+
+
+<article class="card">
+
+<div class="icon">
+  📢
+</div>
+
+<h3>
+  SSLC ಪ್ರಕಟಣೆಗಳು
+</h3>
+
+<p>
+  ಪರೀಕ್ಷಾ ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ಪ್ರಮುಖ
+  ಪ್ರಕಟಣೆಗಳನ್ನು ಇಲ್ಲಿ ನೋಡಿ.
+</p>
+
+</article>
+
 
 </div>
 
@@ -483,9 +735,1138 @@
 
 </section>
 
-<!-- ================================
+
+<!-- =====================================================
      BATCH RESULTS
-================================ -->
+===================================================== -->
+
+<section class="section tint">
+
+<div class="wrap">
+
+
+<div class="section-head">
+
+<span class="kicker">
+  ಫಲಿತಾಂಶ ಮತ್ತು ಸಾಧನೆ
+</span>
+
+<h2>
+  ವರ್ಷವಾರು SSLC ಫಲಿತಾಂಶ
+</h2>
+
+<p>
+  ಒಂದು ಬ್ಯಾಚ್ ಆಯ್ಕೆ ಮಾಡಿ ಆ ವರ್ಷದ ಫಲಿತಾಂಶ
+  ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ನೋಡಿ.
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     BATCH BUTTONS
+===================================================== -->
+
+<div class="batch-buttons">
+
+
+<button
+class="batch-btn active"
+onclick="showBatch('batch2025', this)">
+
+<span>
+  2025–26
+</span>
+
+<small>
+  SSLC Batch
+</small>
+
+</button>
+
+
+<button
+class="batch-btn"
+onclick="showBatch('batch2024', this)">
+
+<span>
+  2024–25
+</span>
+
+<small>
+  SSLC Batch
+</small>
+
+</button>
+
+
+<button
+class="batch-btn"
+onclick="showBatch('batch2023', this)">
+
+<span>
+  2023–24
+</span>
+
+<small>
+  SSLC Batch
+</small>
+
+</button>
+
+
+<button
+class="batch-btn"
+onclick="showBatch('batch2022', this)">
+
+<span>
+  2022–23
+</span>
+
+<small>
+  SSLC Batch
+</small>
+
+</button>
+
+
+</div>
+
+
+<!-- =====================================================
+     2025–26
+===================================================== -->
+
+<div
+id="batch2025"
+class="batch-content active">
+
+
+<div class="batch-result">
+
+
+<div class="result-box">
+
+ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
+
+<strong>
+81
+</strong>
+
+</div>
+
+
+<div class="result-box">
+
+ಉತ್ತೀರ್ಣರು
+
+<strong>
+81
+</strong>
+
+</div>
+
+
+<div class="result-box">
+
+ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+
+<strong>
+100%
+</strong>
+
+</div>
+
+
+</div>
+
+
+<div class="batch-title">
+
+<h2>
+  🏆 2025–26 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
+</h2>
+
+<p>
+  ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
+</p>
+
+</div>
+
+
+<div class="top-students">
+
+
+<!-- 1 -->
+
+<article class="student-rank first">
+
+<div class="rank">
+1
+</div>
+
+<img
+class="student-photo"
+src="assets/images/students/b25/student1.png"
+alt="ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ">
+
+<h3>
+ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ
+</h3>
+
+<p>
+1ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+593
+</strong>
+
+</article>
+
+
+<!-- 2 -->
+
+<article class="student-rank second">
+
+<div class="rank">
+2
+</div>
+
+<img
+class="student-photo"
+src="assets/images/students/b25/student2.png"
+alt="ಜಿ. ವಿ. ಧನುಷ್">
+
+<h3>
+ಜಿ. ವಿ. ಧನುಷ್
+</h3>
+
+<p>
+2ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+591
+</strong>
+
+</article>
+
+
+<!-- 3 -->
+
+<article class="student-rank third">
+
+<div class="rank">
+3
+</div>
+
+<img
+class="student-photo"
+src="assets/images/students/b25/student3.png"
+alt="ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ">
+
+<h3>
+ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ
+</h3>
+
+<p>
+3ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+581
+</strong>
+
+</article>
+
+
+<!-- 4 -->
+
+<article class="student-rank">
+
+<div class="rank">
+4
+</div>
+
+<div class="student-photo">
+👩‍🎓
+</div>
+
+<h3>
+ಶ್ರಾವ್ಯಾ ಗಂಗಾಧಾರ್ ಗೌಡ
+</h3>
+
+<p>
+4ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+577
+</strong>
+
+</article>
+
+
+<!-- 5 -->
+
+<article class="student-rank">
+
+<div class="rank">
+5
+</div>
+
+<div class="student-photo">
+👨‍🎓
+</div>
+
+<h3>
+ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ
+</h3>
+
+<p>
+5ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+571
+</strong>
+
+</article>
+
+
+<!-- 6 -->
+
+<article class="student-rank">
+
+<div class="rank">
+6
+</div>
+
+<div class="student-photo">
+👩‍🎓
+</div>
+
+<h3>
+ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ
+</h3>
+
+<p>
+6ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+570
+</strong>
+
+</article>
+
+
+<!-- 7 -->
+
+<article class="student-rank">
+
+<div class="rank">
+7
+</div>
+
+<div class="student-photo">
+👨‍🎓
+</div>
+
+<h3>
+ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ
+</h3>
+
+<p>
+7ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+567
+</strong>
+
+</article>
+
+
+<!-- 8 -->
+
+<article class="student-rank">
+
+<div class="rank">
+8
+</div>
+
+<div class="student-photo">
+👩‍🎓
+</div>
+
+<h3>
+ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ
+</h3>
+
+<p>
+8ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+564
+</strong>
+
+</article>
+
+
+<!-- 9 -->
+
+<article class="student-rank">
+
+<div class="rank">
+9
+</div>
+
+<div class="student-photo">
+👨‍🎓
+</div>
+
+<h3>
+ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ
+</h3>
+
+<p>
+9ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+560
+</strong>
+
+</article>
+
+
+<!-- 10 -->
+
+<article class="student-rank">
+
+<div class="rank">
+10
+</div>
+
+<div class="student-photo">
+👩‍🎓
+</div>
+
+<h3>
+ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ
+</h3>
+
+<p>
+10ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+559
+</strong>
+
+</article>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     2024–25
+===================================================== -->
+
+<div
+id="batch2024"
+class="batch-content">
+
+
+<div class="batch-result">
+
+<div class="result-box">
+ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
+<strong>81</strong>
+</div>
+
+<div class="result-box">
+ಉತ್ತೀರ್ಣರು
+<strong>81</strong>
+</div>
+
+<div class="result-box">
+ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+<strong>100%</strong>
+</div>
+
+</div>
+
+
+<div class="batch-title">
+
+<h2>
+🏆 2024–25 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
+</h2>
+
+<p>
+ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
+</p>
+
+</div>
+
+
+<div class="top-students">
+
+<!-- Replace these placeholder students with actual 2024–25 data -->
+
+<article class="student-rank first">
+
+<div class="rank">1</div>
+
+<div class="student-photo">
+👩‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+1ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+
+<article class="student-rank second">
+
+<div class="rank">2</div>
+
+<div class="student-photo">
+👨‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+2ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+
+<article class="student-rank third">
+
+<div class="rank">3</div>
+
+<div class="student-photo">
+👩‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+3ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">4</div>
+
+<div class="student-photo">
+👨‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+4ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">5</div>
+
+<div class="student-photo">
+👩‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+5ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">6</div>
+
+<div class="student-photo">
+👨‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+6ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">7</div>
+
+<div class="student-photo">
+👩‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+7ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">8</div>
+
+<div class="student-photo">
+👨‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+8ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">9</div>
+
+<div class="student-photo">
+👩‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+9ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">10</div>
+
+<div class="student-photo">
+👨‍🎓
+</div>
+
+<h3>
+ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು
+</h3>
+
+<p>
+10ನೇ ಸ್ಥಾನ
+</p>
+
+<strong>
+000
+</strong>
+
+</article>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     2023–24
+===================================================== -->
+
+<div
+id="batch2023"
+class="batch-content">
+
+
+<div class="batch-result">
+
+<div class="result-box">
+ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
+<strong>81</strong>
+</div>
+
+<div class="result-box">
+ಉತ್ತೀರ್ಣರು
+<strong>81</strong>
+</div>
+
+<div class="result-box">
+ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+<strong>100%</strong>
+</div>
+
+</div>
+
+
+<div class="batch-title">
+
+<h2>
+🏆 2023–24 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
+</h2>
+
+<p>
+ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
+</p>
+
+</div>
+
+
+<div class="top-students">
+
+<!-- Replace these with actual 2023–24 student data -->
+
+<article class="student-rank first">
+
+<div class="rank">1</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>1ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank second">
+
+<div class="rank">2</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>2ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank third">
+
+<div class="rank">3</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>3ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">4</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>4ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">5</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>5ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">6</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>6ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">7</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>7ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">8</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>8ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">9</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>9ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">10</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>10ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     2022–23
+===================================================== -->
+
+<div
+id="batch2022"
+class="batch-content">
+
+
+<div class="batch-result">
+
+<div class="result-box">
+ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
+<strong>81</strong>
+</div>
+
+<div class="result-box">
+ಉತ್ತೀರ್ಣರು
+<strong>81</strong>
+</div>
+
+<div class="result-box">
+ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
+<strong>100%</strong>
+</div>
+
+</div>
+
+
+<div class="batch-title">
+
+<h2>
+🏆 2022–23 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
+</h2>
+
+<p>
+ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
+</p>
+
+</div>
+
+
+<div class="top-students">
+
+<!-- Replace these with actual 2022–23 student data -->
+
+<article class="student-rank first">
+
+<div class="rank">1</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>1ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank second">
+
+<div class="rank">2</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>2ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank third">
+
+<div class="rank">3</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>3ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">4</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>4ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">5</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>5ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">6</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>6ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">7</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>7ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">8</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>8ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">9</div>
+
+<div class="student-photo">👩‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>9ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+<article class="student-rank">
+
+<div class="rank">10</div>
+
+<div class="student-photo">👨‍🎓</div>
+
+<h3>ವಿದ್ಯಾರ್ಥಿ ಹೆಸರು</h3>
+
+<p>10ನೇ ಸ್ಥಾನ</p>
+
+<strong>000</strong>
+
+</article>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     MODEL QUESTION PAPERS
+===================================================== -->
+<!-- =====================================================
+     MODEL QUESTION PAPERS
+===================================================== -->
 
 <section class="section tint">
 
@@ -493,1038 +1874,486 @@
 
 <div class="section-head">
 
-  <span class="kicker">
-    ಫಲಿತಾಂಶ ಮತ್ತು ಸಾಧನೆ
-  </span>
+<span class="kicker">
+  ಅಧ್ಯಯನ ಸಾಮಗ್ರಿ
+</span>
 
-  <h2>
-    ವರ್ಷವಾರು SSLC ಫಲಿತಾಂಶ
-  </h2>
+<h2>
+  Model Question Papers
+</h2>
 
-  <p>
-    ಒಂದು ಬ್ಯಾಚ್ ಆಯ್ಕೆ ಮಾಡಿ ಆ ವರ್ಷದ ಫಲಿತಾಂಶ
-    ಮತ್ತು ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ನೋಡಿ.
-  </p>
+<p>
+  ವಿಷಯವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ ಸಂಬಂಧಿಸಿದ ವರ್ಷದ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆಯನ್ನು ವೀಕ್ಷಿಸಿ ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ.
+</p>
+
+</div>
+
+
+<!-- SUBJECT TABS -->
+<div class="paper-subject-tabs">
+
+<button class="paper-subject-tab active"
+        onclick="showSubjectPaper('kannada', this)">
+  📘 ಕನ್ನಡ
+</button>
+
+<button class="paper-subject-tab"
+        onclick="showSubjectPaper('english', this)">
+  📗 English
+</button>
+
+<button class="paper-subject-tab"
+        onclick="showSubjectPaper('hindi', this)">
+  📕 ಹಿಂದಿ
+</button>
+
+<button class="paper-subject-tab"
+        onclick="showSubjectPaper('mathematics', this)">
+  📐 ಗಣಿತ
+</button>
+
+<button class="paper-subject-tab"
+        onclick="showSubjectPaper('science', this)">
+  🔬 ವಿಜ್ಞಾನ
+</button>
+
+<button class="paper-subject-tab"
+        onclick="showSubjectPaper('social-science', this)">
+  🌍 ಸಮಾಜ ವಿಜ್ಞಾನ
+</button>
 
 </div>
 
-<!-- ================================
-     BATCH BUTTONS
-================================ -->
-
-<div class="batch-buttons">
-
-<button
-class="batch-btn active"
-onclick="showBatch('batch2025', this)">
-
-<span>2025–26</span>
-
-  <small>
-    SSLC Batch
-  </small>
-
-</button>
-
-<button
-class="batch-btn"
-onclick="showBatch('batch2024', this)">
-
-<span>2024–25</span>
-
-  <small>
-    SSLC Batch
-  </small>
-
-</button>
-
-<button
-class="batch-btn"
-onclick="showBatch('batch2023', this)">
-
-<span>2023–24</span>
-
-  <small>
-    SSLC Batch
-  </small>
-
-</button>
-
-<button
-class="batch-btn"
-onclick="showBatch('batch2022', this)">
-
-<span>2022–23</span>
-
-  <small>
-    SSLC Batch
-  </small>
-
-</button>
-
-</button>
-
-</div>
 
 <!-- =====================================================
-     2025–26
+     KANNADA
 ===================================================== -->
 
-<div id="batch2025" class="batch-content active">
+<div class="subject-paper-content active" id="paper-kannada">
 
-<div class="batch-result">
+<div class="paper-table">
 
-<div class="result-box">
-
-ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
-
-<strong>81</strong>
-
+<div class="paper-table-head">
+  <span>ವರ್ಷ</span>
+  <span>ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <span>ಕಾರ್ಯ</span>
 </div>
 
-<div class="result-box">
-
-ಉತ್ತೀರ್ಣರು
-
-<strong>81</strong>
-
-</div>
-
-<div class="result-box">
-
-ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
-
-<strong>100%</strong>
-
-</div>
-
-</div>
-
-<div class="batch-title">
-
-  <h2>
-    🏆 2025–26 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
-  </h2>
-
-  <p>
-    ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
-  </p>
-
-</div>
-
-<div class="top-students">
-
-<!-- 1 -->
-
-<article class="student-rank first">
-
-  <div class="rank">1</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student1.png"
- alt="ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ">
-
-  <h3>
-    ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ
-  </h3>
-
-  <p>1ನೇ ಸ್ಥಾನ</p>
-
-<strong>593</strong>
-
-</article>
-
-<!-- 2 -->
-
-<article class="student-rank second">
-
-  <div class="rank">2</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student2.png"
- alt="ಜಿ. ವಿ. ಧನುಷ್">
-
-  <h3>
-    ಜಿ. ವಿ. ಧನುಷ್
-  </h3>
-
-  <p>2ನೇ ಸ್ಥಾನ</p>
-
-<strong>591</strong>
-
-</article>
-
-<!-- 3 -->
-
-<article class="student-rank third">
-
-  <div class="rank">3</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student3.png"
- alt="ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ">
-
-  <h3>
-    ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ
-  </h3>
-
-  <p>3ನೇ ಸ್ಥಾನ</p>
-
-<strong>581</strong>
-
-</article>
-
-<!-- 4 -->
-
-<article class="student-rank">
-
-  <div class="rank">4</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ
-  </h3>
-
-  <p>4ನೇ ಸ್ಥಾನ</p>
-
-<strong>577</strong>
-
-</article>
-
-<!-- 5 -->
-
-<article class="student-rank">
-
-  <div class="rank">5</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ
-  </h3>
-
-  <p>5ನೇ ಸ್ಥಾನ</p>
-
-<strong>571</strong>
-
-</article>
-
-<!-- 6 -->
-
-<article class="student-rank">
-
-  <div class="rank">6</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ
-  </h3>
-
-  <p>6ನೇ ಸ್ಥಾನ</p>
-
-<strong>570</strong>
-
-</article>
-
-<!-- 7 -->
-
-<article class="student-rank">
-
-  <div class="rank">7</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ
-  </h3>
-
-  <p>7ನೇ ಸ್ಥಾನ</p>
-
-<strong>567</strong>
-
-</article>
-
-<!-- 8 -->
-
-<article class="student-rank">
-
-  <div class="rank">8</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ
-  </h3>
-
-  <p>8ನೇ ಸ್ಥಾನ</p>
-
-<strong>564</strong>
-
-</article>
-
-<!-- 9 -->
-
-<article class="student-rank">
-
-  <div class="rank">9</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ
-  </h3>
-
-  <p>9ನೇ ಸ್ಥಾನ</p>
-
-<strong>560</strong>
-
-</article>
-
-<!-- 10 -->
-
-<article class="student-rank">
-
-  <div class="rank">10</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ
-  </h3>
-
-  <p>10ನೇ ಸ್ಥಾನ</p>
-
-<strong>559</strong>
-
-</article>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     2024–25
-===================================================== -->
-
-<div id="batch2024" class="batch-content">
-
-<div class="batch-result">
-
-<div class="result-box">
-
-ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
-
-<strong>81</strong>
-
-</div>
-
-<div class="result-box">
-
-ಉತ್ತೀರ್ಣರು
-
-<strong>81</strong>
-
-</div>
-
-<div class="result-box">
-
-ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
-
-<strong>100%</strong>
-
-</div>
-
-</div>
-
-<div class="batch-title">
-
-  <h2>
-    🏆 2024–25 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
-  </h2>
-
-  <p>
-    ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
-  </p>
-
-</div>
-
-<div class="top-students">
-
-<article class="student-rank first">
-
-  <div class="rank">1</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student1.png"
- alt="ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ">
-
-  <h3>
-    ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ
-  </h3>
-
-  <p>1ನೇ ಸ್ಥಾನ</p>
-
-<strong>593</strong>
-
-</article>
-
-<article class="student-rank second">
-
-  <div class="rank">2</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student2.png"
- alt="ಜಿ. ವಿ. ಧನುಷ್">
-
-  <h3>
-    ಜಿ. ವಿ. ಧನುಷ್
-  </h3>
-
-  <p>2ನೇ ಸ್ಥಾನ</p>
-
-<strong>591</strong>
-
-</article>
-
-<article class="student-rank third">
-
-  <div class="rank">3</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student3.png"
- alt="ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ">
-
-  <h3>
-    ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ
-  </h3>
-
-  <p>3ನೇ ಸ್ಥಾನ</p>
-
-<strong>581</strong>
-
-</article>
-
-<article class="student-rank">
-
-  <div class="rank">4</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ
-  </h3>
-
-  <p>4ನೇ ಸ್ಥಾನ</p>
-
-<strong>577</strong>
-
-</article>
-
-<article class="student-rank">
-
-  <div class="rank">5</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ
-  </h3>
-
-  <p>5ನೇ ಸ್ಥಾನ</p>
-
-<strong>571</strong>
-
-</article>
-
-<article class="student-rank">
-
-  <div class="rank">6</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ
-  </h3>
-
-  <p>6ನೇ ಸ್ಥಾನ</p>
-
-<strong>570</strong>
-
-</article>
-
-<article class="student-rank">
-
-  <div class="rank">7</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ
-  </h3>
-
-  <p>7ನೇ ಸ್ಥಾನ</p>
-
-<strong>567</strong>
-
-</article>
-
-<article class="student-rank">
-
-  <div class="rank">8</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ
-  </h3>
-
-  <p>8ನೇ ಸ್ಥಾನ</p>
-
-<strong>564</strong>
-
-</article>
-
-<article class="student-rank">
-
-  <div class="rank">9</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ
-  </h3>
-
-  <p>9ನೇ ಸ್ಥಾನ</p>
-
-<strong>560</strong>
-
-</article>
-
-<article class="student-rank">
-
-  <div class="rank">10</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ
-  </h3>
-
-  <p>10ನೇ ಸ್ಥಾನ</p>
-
-<strong>559</strong>
-
-</article>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     2023–24
-===================================================== -->
-
-
-<div id="batch2023" class="batch-content">
-
-<div class="batch-result">
-
-<div class="result-box">
-
-ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
-
-<strong>81</strong>
-
-</div>
-
-<div class="result-box">
-
-ಉತ್ತೀರ್ಣರು
-
-<strong>81</strong>
-
-</div>
-
-<div class="result-box">
-
-ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
-
-<strong>100%</strong>
-
-</div>
-
-</div>
-
-<div class="batch-title">
-
-  <h2>
-    🏆 2023–24 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
-  </h2>
-
-  <p>
-    ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
-  </p>
-
-</div>
-
-<div class="top-students">
-
-<!-- 1 -->
-
-<article class="student-rank first">
-
-  <div class="rank">1
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಕನ್ನಡ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 1</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/kannada1.pdf"
+       target="_blank"
+       class="view-btn">
+       👁 View
+    </a>
+
+    <a href="assets/papers/2026-27/kannada1.pdf"
+       download
+       class="download-btn">
+       ⬇ Download
+    </a>
   </div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student1.png"
- alt="ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ">
-
-  <h3>
-    ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ
-  </h3>
-
-  <p>1ನೇ ಸ್ಥಾನ</p>
-
-<strong>593</strong>
-
-</article>
-
-<!-- 2 -->
-
-<article class="student-rank second">
-
-  <div class="rank">2</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student2.png"
- alt="ಜಿ. ವಿ. ಧನುಷ್">
-
-  <h3>
-    ಜಿ. ವಿ. ಧನುಷ್
-  </h3>
-
-  <p>2ನೇ ಸ್ಥಾನ</p>
-
-<strong>591</strong>
-
-</article>
-
-<!-- 3 -->
-
-<article class="student-rank third">
-
-  <div class="rank">3</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student3.png"
- alt="ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ">
-
-  <h3>
-    ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ
-  </h3>
-
-  <p>3ನೇ ಸ್ಥಾನ</p>
-
-<strong>581</strong>
-
-</article>
-
-<!-- 4 -->
-
-<article class="student-rank">
-
-  <div class="rank">4</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ
-  </h3>
-
-  <p>4ನೇ ಸ್ಥಾನ</p>
-
-<strong>577</strong>
-
-</article>
-
-<!-- 5 -->
-
-<article class="student-rank">
-
-  <div class="rank">5</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ
-  </h3>
-
-  <p>5ನೇ ಸ್ಥಾನ</p>
-
-<strong>571</strong>
-
-</article>
-
-<!-- 6 -->
-
-<article class="student-rank">
-
-  <div class="rank">6</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ
-  </h3>
-
-  <p>6ನೇ ಸ್ಥಾನ</p>
-
-<strong>570</strong>
-
-</article>
-
-<!-- 7 -->
-
-<article class="student-rank">
-
-  <div class="rank">7</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ
-  </h3>
-
-  <p>7ನೇ ಸ್ಥಾನ</p>
-
-<strong>567</strong>
-
-</article>
-
-<!-- 8 -->
-
-<article class="student-rank">
-
-  <div class="rank">8</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ
-  </h3>
-
-  <p>8ನೇ ಸ್ಥಾನ</p>
-
-<strong>564</strong>
-
-</article>
-
-<!-- 9 -->
-
-<article class="student-rank">
-
-  <div class="rank">9</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ
-  </h3>
-
-  <p>9ನೇ ಸ್ಥಾನ</p>
-
-<strong>560</strong>
-
-</article>
-
-<!-- 10 -->
-
-<article class="student-rank">
-
-  <div class="rank">10</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ
-  </h3>
-
-  <p>10ನೇ ಸ್ಥಾನ</p>
-
-<strong>559</strong>
-
-</article>
-
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಕನ್ನಡ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 2</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/kannada2.pdf"
+       target="_blank"
+       class="view-btn">
+       👁 View
+    </a>
+
+    <a href="assets/papers/2026-27/kannada2.pdf"
+       download
+       class="download-btn">
+       ⬇ Download
+    </a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಕನ್ನಡ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 3</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/kannada3.pdf"
+       target="_blank"
+       class="view-btn">
+       👁 View
+    </a>
+
+    <a href="assets/papers/2026-27/kannada3.pdf"
+       download
+       class="download-btn">
+       ⬇ Download
+    </a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಕನ್ನಡ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 4</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/kannada4.pdf"
+       target="_blank"
+       class="view-btn">
+       👁 View
+    </a>
+
+    <a href="assets/papers/2026-27/kannada4.pdf"
+       download
+       class="download-btn">
+       ⬇ Download
+    </a>
+  </div>
 </div>
 
 </div>
+</div>
+
 
 <!-- =====================================================
-     2022–23
+     ENGLISH
 ===================================================== -->
 
-<div id="batch2022" class="batch-content">
+<div class="subject-paper-content" id="paper-english">
 
-<div class="batch-result">
+<div class="paper-table">
 
-<div class="result-box">
-
-ಒಟ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು
-
-<strong>81</strong>
-
+<div class="paper-table-head">
+  <span>ವರ್ಷ</span>
+  <span>ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <span>ಕಾರ್ಯ</span>
 </div>
 
-<div class="result-box">
-
-ಉತ್ತೀರ್ಣರು
-
-<strong>81</strong>
-
-</div>
-
-<div class="result-box">
-
-ಉತ್ತೀರ್ಣ ಪ್ರಮಾಣ
-
-<strong>100%</strong>
-
-</div>
-
-</div>
-
-<div class="batch-title">
-
-  <h2>
-    🏆 2022–23 SSLC ಟಾಪ್ 10 ವಿದ್ಯಾರ್ಥಿಗಳು
-  </h2>
-
-  <p>
-    ಹೆಚ್ಚಿನ ಅಂಕ ಪಡೆದ ವಿದ್ಯಾರ್ಥಿಗಳು
-  </p>
-
-</div>
-
-<div class="top-students">
-
-<!-- 1 -->
-
-<article class="student-rank first">
-
-  <div class="rank">1
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>English Model Question Paper - 1</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/english1.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/english1.pdf"
+       download class="download-btn">⬇ Download</a>
   </div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student1.png"
- alt="ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ">
-
-  <h3>
-    ಸೌಜನ್ಯ ವೆಂಕಟೇಶ್ ನಾಯ್ಕ
-  </h3>
-
-  <p>1ನೇ ಸ್ಥಾನ</p>
-
-<strong>593</strong>
-
-</article>
-
-<!-- 2 -->
-
-<article class="student-rank second">
-
-  <div class="rank">2</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student2.png"
- alt="ಜಿ. ವಿ. ಧನುಷ್">
-
-  <h3>
-    ಜಿ. ವಿ. ಧನುಷ್
-  </h3>
-
-  <p>2ನೇ ಸ್ಥಾನ</p>
-
-<strong>591</strong>
-
-</article>
-
-<!-- 3 -->
-
-<article class="student-rank third">
-
-  <div class="rank">3</div>
-
-<img
- class="student-photo"
- src="assets/images/students/b25/student3.png"
- alt="ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ">
-
-  <h3>
-    ವರ್ಷಿಣಿ ಪಾಂಡುರಂಗ ನಾಯ್ಕ
-  </h3>
-
-  <p>3ನೇ ಸ್ಥಾನ</p>
-
-<strong>581</strong>
-
-</article>
-
-<!-- 4 -->
-
-<article class="student-rank">
-
-  <div class="rank">4</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಶ್ರಾವ್ಯಾ ಗಂಗಾಧರ್ ಗೌಡ
-  </h3>
-
-  <p>4ನೇ ಸ್ಥಾನ</p>
-
-<strong>577</strong>
-
-</article>
-
-<!-- 5 -->
-
-<article class="student-rank">
-
-  <div class="rank">5</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಸ್ಪಂದನಾ ಶ್ರೀಕಾಂತ್ ಹೆಗಡೆ
-  </h3>
-
-  <p>5ನೇ ಸ್ಥಾನ</p>
-
-<strong>571</strong>
-
-</article>
-
-<!-- 6 -->
-
-<article class="student-rank">
-
-  <div class="rank">6</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ವಿನುತಾ ವಿನಯ ನಾಯ್ಕ
-  </h3>
-
-  <p>6ನೇ ಸ್ಥಾನ</p>
-
-<strong>570</strong>
-
-</article>
-
-<!-- 7 -->
-
-<article class="student-rank">
-
-  <div class="rank">7</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಶರತ್ ತಿಮ್ಮಪ್ಪ ಗೌಡ
-  </h3>
-
-  <p>7ನೇ ಸ್ಥಾನ</p>
-
-<strong>567</strong>
-
-</article>
-
-<!-- 8 -->
-
-<article class="student-rank">
-
-  <div class="rank">8</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಭೂಮಿಕಾ ಚಂದ್ರಕಾಂತ್ ಅಂಬಿಗ
-  </h3>
-
-  <p>8ನೇ ಸ್ಥಾನ</p>
-
-<strong>564</strong>
-
-</article>
-
-<!-- 9 -->
-
-<article class="student-rank">
-
-  <div class="rank">9</div>
-
-  <div class="student-photo">👨‍🎓</div>
-
-  <h3>
-    ಅನನ್ಯ ಮಾದೇವ ಮೇಸ್ತಾ
-  </h3>
-
-  <p>9ನೇ ಸ್ಥಾನ</p>
-
-<strong>560</strong>
-
-</article>
-
-<!-- 10 -->
-
-<article class="student-rank">
-
-  <div class="rank">10</div>
-
-  <div class="student-photo">👩‍🎓</div>
-
-  <h3>
-    ಅಮೃತಾ ರಾಜು ನಾಯ್ಕ
-  </h3>
-
-  <p>10ನೇ ಸ್ಥಾನ</p>
-
-<strong>559</strong>
-
-</article>
-
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>English Model Question Paper - 2</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/english2.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/english2.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>English Model Question Paper - 3</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/english3.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/english3.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>English Model Question Paper - 4</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/english4.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/english4.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
 </div>
 
 </div>
 </div>
+
+
+<!-- =====================================================
+     HINDI
+===================================================== -->
+
+<div class="subject-paper-content" id="paper-hindi">
+
+<div class="paper-table">
+
+<div class="paper-table-head">
+  <span>ವರ್ಷ</span>
+  <span>ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <span>ಕಾರ್ಯ</span>
+</div>
+
+<div class="paper-row">
+  <strong>2025–26</strong>
+  <span>ಹಿಂದಿ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2025-26/hindi.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2025-26/hindi.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2024–25</strong>
+  <span>ಹಿಂದಿ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2024-25/hindi.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2024-25/hindi.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2023–24</strong>
+  <span>ಹಿಂದಿ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2023-24/hindi.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2023-24/hindi.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2022–23</strong>
+  <span>ಹಿಂದಿ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2022-23/hindi.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2022-23/hindi.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<!-- =====================================================
+     MATHEMATICS
+===================================================== -->
+
+<div class="subject-paper-content" id="paper-mathematics">
+
+<div class="paper-table">
+
+<div class="paper-table-head">
+  <span>ವರ್ಷ</span>
+  <span>ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <span>ಕಾರ್ಯ</span>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಗಣಿತ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 1</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/mathematics1.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/mathematics1.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಗಣಿತ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 2</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/mathematics2.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/mathematics2.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಗಣಿತ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 3</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/mathematics3.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/mathematics3.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಗಣಿತ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 4</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/mathematics4.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/mathematics4.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<!-- =====================================================
+     SCIENCE
+===================================================== -->
+
+<div class="subject-paper-content" id="paper-science">
+
+<div class="paper-table">
+
+<div class="paper-table-head">
+  <span>ವರ್ಷ</span>
+  <span>ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <span>ಕಾರ್ಯ</span>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ವಿಜ್ಞಾನ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 1</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/science1.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/science1.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ವಿಜ್ಞಾನ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 2</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/science2.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/science2.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ವಿಜ್ಞಾನ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 3</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/science3.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/science3.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ವಿಜ್ಞಾನ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 4</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/science4.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/science4.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<!-- =====================================================
+     SOCIAL SCIENCE
+===================================================== -->
+
+<div class="subject-paper-content" id="paper-social-science">
+
+<div class="paper-table">
+
+<div class="paper-table-head">
+  <span>ವರ್ಷ</span>
+  <span>ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</span>
+  <span>ಕಾರ್ಯ</span>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಸಮಾಜ ವಿಜ್ಞಾನ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 1</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/social-science1.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/social-science1.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಸಮಾಜ ವಿಜ್ಞಾನ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 2</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/social-science2.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/social-science2.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಸಮಾಜ ವಿಜ್ಞಾನ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 3</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/social-science3.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/social-science3.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+<div class="paper-row">
+  <strong>2026–27</strong>
+  <span>ಸಮಾಜ ವಿಜ್ಞಾನ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ - 4</span>
+  <div class="paper-actions">
+    <a href="assets/papers/2026-27/social-science4.pdf"
+       target="_blank" class="view-btn">👁 View</a>
+    <a href="assets/papers/2026-27/social-science4.pdf"
+       download class="download-btn">⬇ Download</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<!-- =====================================================
+     NOTE
+===================================================== -->
+
+<div class="note">
+
+<strong>
+  ಸೂಚನೆ:
+</strong>
+
+ಮೇಲಿನ ವಿಷಯವಾರು ವಿಭಾಗದಿಂದ ಅಗತ್ಯವಿರುವ
+ವರ್ಷದ ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ
+ವೀಕ್ಷಿಸಬಹುದು ಅಥವಾ PDF ರೂಪದಲ್ಲಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಬಹುದು.
+
+</div>
+
 
 </div>
 
 </section>
 
-<!-- ================================
+<!-- =====================================================
      WISHES
-================================ -->
+===================================================== -->
 
 <section class="section tint">
 
 <div class="wrap split">
+
 
 <div>
 
@@ -1542,58 +2371,86 @@ onclick="showBatch('batch2022', this)">
   ಉತ್ತಮ ಫಲಿತಾಂಶ ಪಡೆಯಲಿ.
 </p>
 
+
 <div class="checks">
 
-<div class="check">
-  <b>✓</b>
-  ನಿಯಮಿತ ಅಧ್ಯಯನ ಮತ್ತು ಪುನರವಲೋಕನ
-</div>
 
 <div class="check">
-  <b>✓</b>
-  ಸಮಯದ ಸರಿಯಾದ ನಿರ್ವಹಣೆ
+
+<b>✓</b>
+
+ನಿಯಮಿತ ಅಧ್ಯಯನ ಮತ್ತು ಪುನರವಲೋಕನ
+
 </div>
+
 
 <div class="check">
-  <b>✓</b>
-  ಶಿಕ್ಷಕರ ಮಾರ್ಗದರ್ಶನದ ಸದ್ಬಳಕೆ
+
+<b>✓</b>
+
+ಸಮಯದ ಸರಿಯಾದ ನಿರ್ವಹಣೆ
+
 </div>
+
 
 <div class="check">
-  <b>✓</b>
-  ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಪರೀಕ್ಷೆ ಎದುರಿಸಿ
+
+<b>✓</b>
+
+ಶಿಕ್ಷಕರ ಮಾರ್ಗದರ್ಶನದ ಸದ್ಬಳಕೆ
+
 </div>
+
+
+<div class="check">
+
+<b>✓</b>
+
+ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಪರೀಕ್ಷೆ ಎದುರಿಸಿ
+
+</div>
+
 
 </div>
 
 </div>
+
 
 <div class="quote">
 
 <p>
-  “ಯಶಸ್ಸು ಒಂದೇ ದಿನದಲ್ಲಿ ಸಿಗುವುದಿಲ್ಲ;
-  ಪ್ರತಿದಿನದ ಪರಿಶ್ರಮವೇ ಅದಕ್ಕೆ ದಾರಿ.”
+
+“ಯಶಸ್ಸು ಒಂದೇ ದಿನದಲ್ಲಿ ಸಿಗುವುದಿಲ್ಲ;
+ಪ್ರತಿದಿನದ ಪರಿಶ್ರಮವೇ ಅದಕ್ಕೆ ದಾರಿ.”
+
 </p>
 
 <strong>
-  — SSLC ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಶುಭ ಹಾರೈಕೆಗಳು
+
+— SSLC ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಶುಭ ಹಾರೈಕೆಗಳು
+
 </strong>
 
 </div>
+
 
 </div>
 
 </section>
 
+
 </main>
 
-<!-- ================================
+
+<!-- =====================================================
      FOOTER
-================================ -->
+===================================================== -->
 
 <footer class="footer">
 
+
 <div class="wrap footer-grid">
+
 
 <div>
 
@@ -1611,6 +2468,7 @@ onclick="showBatch('batch2022', this)">
 
 </div>
 
+
 <div>
 
 <h4>
@@ -1618,22 +2476,31 @@ onclick="showBatch('batch2022', this)">
 </h4>
 
 <p>
-  <a href="about.html">ನಮ್ಮ ಶಾಲೆ</a>
+<a href="about.html">
+  ನಮ್ಮ ಶಾಲೆ
+</a>
 </p>
 
 <p>
-  <a href="sdmc.html">SDMC</a>
+<a href="sdmc.html">
+  SDMC
+</a>
 </p>
 
 <p>
-  <a href="sslc.html">SSLC</a>
+<a href="sslc.html">
+  SSLC
+</a>
 </p>
 
 <p>
-  <a href="achievements.html">ಸಾಧನೆಗಳು</a>
+<a href="achievements.html">
+  ಸಾಧನೆಗಳು
+</a>
 </p>
 
 </div>
+
 
 <div>
 
@@ -1651,19 +2518,26 @@ onclick="showBatch('batch2022', this)">
 
 </div>
 
+
 </div>
+
 
 <div class="bottom">
 
 <div class="wrap bottom-inner">
 
 <span>
-  © <span id="year"></span>
-  ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
+
+© <span id="year"></span>
+ಸರಕಾರಿ ಪ್ರೌಢಶಾಲೆ ಹಡಿನಬಾಳ
+
 </span>
 
+
 <span class="designer-credit">
-  Designed &amp; Developed by Sanketh Honavar
+
+Designed &amp; Developed by Sanketh Honavar
+
 </span>
 
 </div>
@@ -1672,65 +2546,143 @@ onclick="showBatch('batch2022', this)">
 
 </footer>
 
+
 <script src="assets/js/main.js"></script>
+
 
 <script>
 
-/* ==========================================
+/* =====================================================
    SSLC BATCH SWITCHER
-========================================== */
+===================================================== */
 
-function showBatch(batchId, button) {
+function showBatch(batchId, button){
 
-  // Hide every batch
-  document.querySelectorAll('.batch-content').forEach(function(batch) {
+  /* Hide every batch */
+
+  document
+  .querySelectorAll('.batch-content')
+  .forEach(function(batch){
+
     batch.classList.remove('active');
+
   });
 
-  // Remove active state from every button
-  document.querySelectorAll('.batch-btn').forEach(function(btn) {
+
+  /* Remove active button */
+
+  document
+  .querySelectorAll('.batch-btn')
+  .forEach(function(btn){
+
     btn.classList.remove('active');
+
   });
 
-  // Show selected batch
-  var selectedBatch = document.getElementById(batchId);
 
-  if (selectedBatch) {
+  /* Show selected batch */
+
+  var selectedBatch =
+  document.getElementById(batchId);
+
+
+  if(selectedBatch){
+
     selectedBatch.classList.add('active');
+
   }
 
-  // Highlight selected button
-  if (button) {
+
+  /* Highlight selected button */
+
+  if(button){
+
     button.classList.add('active');
+
   }
 
-  // Smoothly move to batch content
-  if (selectedBatch) {
-    setTimeout(function() {
+
+  /* Smooth scroll */
+
+  if(selectedBatch){
+
+    setTimeout(function(){
+
       selectedBatch.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+
+        behavior:'smooth',
+
+        block:'start'
+
       });
-    }, 50);
+
+    },50);
+
   }
+
 }
 
 
-/* ==========================================
-   DEFAULT BATCH
-========================================== */
+/* =====================================================
+   MODEL QUESTION PAPER YEAR SWITCHER
+===================================================== */
 
-document.addEventListener('DOMContentLoaded', function() {
+function showSubjectPaper(subject, button){
 
-  var defaultBatch = document.getElementById('batch2025');
+  document.querySelectorAll('.subject-paper-content')
+    .forEach(section => {
+      section.classList.remove('active');
+    });
 
-  if (defaultBatch) {
+  document.querySelectorAll('.paper-subject-tab')
+    .forEach(tab => {
+      tab.classList.remove('active');
+    });
+
+  document.getElementById('paper-' + subject)
+    .classList.add('active');
+
+  button.classList.add('active');
+}
+
+/* =====================================================
+   DEFAULT SETTINGS
+===================================================== */
+
+document.addEventListener(
+'DOMContentLoaded',
+function(){
+
+  /* Default SSLC batch */
+
+  var defaultBatch =
+  document.getElementById('batch2025');
+
+  if(defaultBatch){
+
     defaultBatch.classList.add('active');
+
+  }
+
+
+  /* Footer year */
+
+  var year =
+  document.getElementById('year');
+
+  if(year){
+
+    year.textContent =
+    new Date().getFullYear();
+
   }
 
 });
 
 </script>
 
+
 </body>
+
 </html>
+```
